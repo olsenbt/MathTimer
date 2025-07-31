@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#question-box {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+#answer-input {
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 6rem;
+  text-align: center;
+}
+
+#score-summary {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#missed-questions {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.levels a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.levels a:hover {
+  background-color: #0056b3;
+}

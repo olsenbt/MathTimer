@@ -1,0 +1,166 @@
+const QUESTIONS_TOTAL = 30;
+const TIME_LIMIT = 120;
+
+let operation, level;
+let testTitle = document.getElementById("test-title");
+let startBtn = document.getElementById("start-btn");
+let timerDisplay = document.getElementById("timer");
+let questionCounter = document.getElementById("question-counter");
+let questionBox = document.getElementById("question-box");
+let answerInput = document.getElementById("answer-input");
+let scoreSummary = document.getElementById("score-summary");
+let missedQuestions = document.getElementById("missed-questions");
+
+let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
+let wrongAnswers = [];
+
+function parseURL() {
+  const path = window.location.pathname;
+  const file = path.split("/").pop().replace(".html", "");
+  [operation, level] = file.split("_");
+  level = parseInt(level);
+  const symbols = {
+    addition: "+",
+    subtraction: "-",
+    multiplication: "×",
+    division: "÷"
+  };
+  testTitle.innerText = `${capitalize(operation)} ${symbols[operation]}${level}`;
+}
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function generateBank() {
+  let bank = new Set();
+
+  if(operation == "addition") {
+    for (let i = 0; i < 10; i++) {
+        bank.add(`${level}+${i}`);
+        bank.add(`${i}+${level}`);
+        console.log(`${level}+${i}`);
+        console.log(`${i}+${level}`);
+    }
+  } else if (operation == "multiplication") {
+    for (let i = 0; i < 10; i++) {
+        bank.add(`${level}*${i}`);
+        console.log(`${level}*${i}`);
+        if(i != level) {
+            bank.add(`${i}*${level}`);
+            console.log(`${i}*${level}`);
+        }
+    }
+
+  } else if (operation == "subtraction") {
+    for (let i = level + 9; i >= level; i--) {
+        bank.add(`${i}-${level}`);
+        console.log(`${i}-${level}`);
+    }
+  } else if (operation == "division") {
+    for (let i = 1; i <= 9; i++) {
+        let dividend = i * level;
+        let divisor = level;
+        bank.add(`${dividend}/${divisor}`);
+        console.log(`${dividend}/${divisor}`);
+    }
+  } else {
+    console.log("unknown type " + operation)
+  }
+
+  return Array.from(bank);
+}
+
+function sampleQuestions(bank) {
+  const all = [];
+
+  while (all.length < QUESTIONS_TOTAL) {
+    const pool = [...bank];
+    shuffle(pool);
+    for (let q of pool) {
+      all.push(q);
+      if (all.length === QUESTIONS_TOTAL) break;
+    }
+  }
+
+  return all;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function startTest() {
+  document.getElementById("title-screen").classList.add("hidden");
+  document.getElementById("test-screen").classList.remove("hidden");
+  answerInput.focus();
+  nextQuestion();
+  timer = setInterval(() => {
+    timeLeft--;
+    timerDisplay.textContent = formatTime(timeLeft);
+    if (timeLeft <= 0) finishTest();
+  }, 1000);
+}
+
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = (sec % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+function nextQuestion() {
+  if (currentQuestionIndex >= QUESTIONS_TOTAL) return finishTest();
+  const q = questions[currentQuestionIndex];
+  questionBox.textContent = formatQuestion(q);
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1}/30`;
+  answerInput.value = "";
+}
+
+function formatQuestion(q) {
+  return q.replace("*", "×").replace("/", "÷");
+}
+
+function evaluate(q) {
+  const [a, op, b] = q.match(/(\d+)([+\-*/])(\d+)/).slice(1);
+  switch (op) {
+    case "+": return parseInt(a) + parseInt(b);
+    case "-": return parseInt(a) - parseInt(b);
+    case "*": return parseInt(a) * parseInt(b);
+    case "/": return parseInt(a) / parseInt(b);
+  }
+}
+
+function handleAnswer(e) {
+  if (e.key !== "Enter") return;
+  const userAnswer = parseInt(answerInput.value);
+  const currentQ = questions[currentQuestionIndex];
+  const correct = evaluate(currentQ);
+  if (userAnswer === correct) correctCount++;
+  else wrongAnswers.push({ q: currentQ, correct });
+  currentQuestionIndex++;
+  nextQuestion();
+}
+
+function finishTest() {
+  clearInterval(timer);
+  document.getElementById("test-screen").classList.add("hidden");
+  document.getElementById("end-screen").classList.remove("hidden");
+  scoreSummary.innerText = `You got ${correctCount} out of 30 correct.`;
+  if (wrongAnswers.length > 0) {
+    missedQuestions.innerHTML = `<h3>Questions Missed:</h3><ul>` +
+      wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
+      `</ul>`;
+  } else {
+    missedQuestions.innerHTML = `<p>Perfect score! 🎉</p>`;
+  }
+}
+
+// Init
+parseURL();
+const bank = generateBank();
+questions = sampleQuestions(bank);
+startBtn.addEventListener("click", startTest);
+answerInput.addEventListener("keydown", handleAnswer);
