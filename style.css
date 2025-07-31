@@ -70,20 +70,57 @@ button:hover {
   font-size: 1.2rem;
 }
 
+.levels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .levels a {
   display: inline-block;
   width: 60px;
   height: 60px;
   line-height: 60px;
   margin: 0.5rem;
-  background-color: #007bff;
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  text-align: center;
 }
 
-.levels a:hover {
+.levels a.completed {
+  background-color: #28a745 !important; /* green */
+  color: white;
+}
+
+/* Category-specific colors */
+.addition-levels a {
+  background-color: #007bff;
+}
+.addition-levels a:hover {
   background-color: #0056b3;
+}
+
+.subtraction-levels a {
+  background-color: #dc3545;
+}
+.subtraction-levels a:hover {
+  background-color: #a71d2a;
+}
+
+/* Updated multiplication color */
+.multiplication-levels a {
+  background-color: #6f42c1; /* purple */
+}
+.multiplication-levels a:hover {
+  background-color: #5936a2;
+}
+
+.division-levels a {
+  background-color: #ff7f07;
+}
+.division-levels a:hover {
+  background-color: #c96202;
 }

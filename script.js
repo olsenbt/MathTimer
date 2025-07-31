@@ -138,6 +138,11 @@ function handleAnswer(e) {
   const userAnswer = parseInt(answerInput.value);
   const currentQ = questions[currentQuestionIndex];
   const correct = evaluate(currentQ);
+  
+  if (userAnswer === "" || isNaN(userAnswer)) {
+    return;
+  }
+
   if (userAnswer === correct) correctCount++;
   else wrongAnswers.push({ q: currentQ, correct });
   currentQuestionIndex++;
@@ -149,6 +154,15 @@ function finishTest() {
   document.getElementById("test-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
   scoreSummary.innerText = `You got ${correctCount} out of 30 correct.`;
+  
+  const key = `${operation}_${level}`;
+  const previousScore = parseInt(localStorage.getItem(key)) || 0;
+
+  if(correctCount > previousScore) {
+    localStorage.setItem(key, correctCount);
+  }
+
+  localStorage.setItem(`${operation}_${level}`, correctCount);
   if (wrongAnswers.length > 0) {
     missedQuestions.innerHTML = `<h3>Questions Missed:</h3><ul>` +
       wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
