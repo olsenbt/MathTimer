@@ -90,6 +90,7 @@ button:hover {
   text-align: center;
 }
 
+/*
 .levels a.completed {
   background-color: #28a745 !important;
   color: white;
@@ -99,6 +100,7 @@ button:hover {
   background-color: #19682b !important;
   color: white;
 }
+*/
 
 /* Category-specific colors */
 .addition-levels a {

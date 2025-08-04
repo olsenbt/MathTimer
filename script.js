@@ -186,14 +186,21 @@ function finishTest() {
   }
 
   localStorage.setItem(`${operation}_${level}`, correctCount);
-  if (wrongAnswers.length > 0) {
+
+  if (correctCount === QUESTIONS_TOTAL) {
+    missedQuestions.innerHTML = `<p>Perfect score! 🎉</p>`;
+  } else if (wrongAnswers.length > 0) {
     missedQuestions.innerHTML = `<h3>Questions Missed:</h3><ul>` +
-      wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
+    wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
       `</ul>`;
   } else {
-    missedQuestions.innerHTML = `<p>Perfect score! 🎉</p>`;
+    missedQuestions.innerHTML = `<p>You didn't answer any questions.</p>`;
   }
 }
+
+answerInput.addEventListener("input", () => {
+  answerInput.value = answerInput.value.replace(/\D/g, ""); // Digits only
+});
 
 // Init
 parseURL();
