@@ -91,7 +91,12 @@ button:hover {
 }
 
 .levels a.completed {
-  background-color: #28a745 !important; /* green */
+  background-color: #28a745 !important;
+  color: white;
+}
+
+.levels a.completed:hover{
+  background-color: #19682b !important;
   color: white;
 }
 
@@ -110,9 +115,8 @@ button:hover {
   background-color: #a71d2a;
 }
 
-/* Updated multiplication color */
 .multiplication-levels a {
-  background-color: #6f42c1; /* purple */
+  background-color: #6f42c1;
 }
 .multiplication-levels a:hover {
   background-color: #5936a2;
@@ -122,5 +126,57 @@ button:hover {
   background-color: #ff7f07;
 }
 .division-levels a:hover {
+  background-color: #c96202;
+}
+
+.addition-bg {
+  background-color: #e0f0ff; 
+}
+
+.subtraction-bg {
+  background-color: #ffe6e6;
+}
+
+.multiplication-bg {
+  background-color: #f0e6ff;
+}
+
+.division-bg {
+  background-color: #fff3e0;
+}
+
+.addition-bg #start-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.addition-bg #start-btn:hover {
+  background-color: #0056b3;
+}
+
+.subtraction-bg #start-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.subtraction-bg #start-btn:hover {
+  background-color: #a71d2a;
+}
+
+.multiplication-bg #start-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.multiplication-bg #start-btn:hover {
+  background-color: #5936a2;
+}
+
+.division-bg #start-btn {
+  background-color: #ff7f07;
+  color: white;
+}
+
+.division-bg #start-btn:hover {
   background-color: #c96202;
 }

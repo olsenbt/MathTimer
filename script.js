@@ -14,6 +14,10 @@ let missedQuestions = document.getElementById("missed-questions");
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
 
+/**
+ * Parses the URL to determine the operation and level of the quiz.
+ * Sets the global `operation` and `level` variables and updates the test title.
+ */
 function parseURL() {
   const path = window.location.pathname;
   const file = path.split("/").pop().replace(".html", "");
@@ -25,7 +29,13 @@ function parseURL() {
     multiplication: "×",
     division: "÷"
   };
-  testTitle.innerText = `${capitalize(operation)} ${symbols[operation]}${level}`;
+
+  const isMixed = (level === 10);
+  const symbol = symbols[operation];
+  const levelLabel = isMixed ? "Mixed" : `${symbol}${level}`;
+  testTitle.innerText = `${capitalize(operation)} ${levelLabel}`;
+
+  document.body.classList.add(`${operation}-bg`);
 }
 
 function capitalize(word) {
@@ -35,39 +45,52 @@ function capitalize(word) {
 function generateBank() {
   let bank = new Set();
 
-  if(operation == "addition") {
-    for (let i = 0; i < 10; i++) {
-        bank.add(`${level}+${i}`);
-        bank.add(`${i}+${level}`);
-        console.log(`${level}+${i}`);
-        console.log(`${i}+${level}`);
-    }
-  } else if (operation == "multiplication") {
-    for (let i = 0; i < 10; i++) {
-        bank.add(`${level}*${i}`);
-        console.log(`${level}*${i}`);
-        if(i != level) {
-            bank.add(`${i}*${level}`);
-            console.log(`${i}*${level}`);
-        }
-    }
-
-  } else if (operation == "subtraction") {
-    for (let i = level + 9; i >= level; i--) {
-        bank.add(`${i}-${level}`);
-        console.log(`${i}-${level}`);
-    }
-  } else if (operation == "division") {
-    for (let i = 1; i <= 9; i++) {
-        let dividend = i * level;
-        let divisor = level;
-        bank.add(`${dividend}/${divisor}`);
-        console.log(`${dividend}/${divisor}`);
+  let levelsToGenerate = [];
+  // Handle Mixed Level
+  if (level == 10) {
+    // Add levels 2 through 9
+    for (let l = 2; l <= 9; l++) {
+      levelsToGenerate.push(l);
     }
   } else {
-    console.log("unknown type " + operation)
+    // Only generate one level
+    levelsToGenerate.push(level)
   }
 
+
+  for(let level of levelsToGenerate) {
+    if(operation == "addition") {
+      for (let i = 0; i < 10; i++) {
+          bank.add(`${level}+${i}`);
+          bank.add(`${i}+${level}`);
+          console.log(`${level}+${i}`);
+          console.log(`${i}+${level}`);
+      }
+    } else if (operation == "multiplication") {
+      for (let i = 0; i < 10; i++) {
+          bank.add(`${level}*${i}`);
+          console.log(`${level}*${i}`);
+          if(i != level) {
+              bank.add(`${i}*${level}`);
+              console.log(`${i}*${level}`);
+          }
+      }
+    } else if (operation == "subtraction") {
+      for (let i = level + 9; i >= level; i--) {
+          bank.add(`${i}-${level}`);
+          console.log(`${i}-${level}`);
+      }
+    } else if (operation == "division") {
+      for (let i = 1; i <= 9; i++) {
+          let dividend = i * level;
+          let divisor = level;
+          bank.add(`${dividend}/${divisor}`);
+          console.log(`${dividend}/${divisor}`);
+      }
+    } else {
+      console.log("unknown type " + operation)
+    }
+  }
   return Array.from(bank);
 }
 
