@@ -14,6 +14,44 @@ let missedQuestions = document.getElementById("missed-questions");
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
 
+const perfectGifs = [
+  "arthur_celebrate.gif",
+  "bluey_bluey.gif",
+  "bluey_celebrate.gif",
+  "bluey_dad.gif",
+  "bluey_twirl.gif",
+  "cars_race.gif",
+  "dinosaur_dance.gif",
+  "elmo_celebrate.gif",
+  "elmo_dance.gif",
+  "hulk_dance.gif",
+  "lego_batman.gif",
+  "lego_dance.gif",
+  "lego_shocked.gif",
+  "mario_dance.gif",
+  "mario_luigi.gif",
+  "minecraft_creeper.gif",
+  "minecraft_steve.gif",
+  "minions_dance.gif",
+  "minions_purple.gif",
+  "minions_tracksuit.gif",
+  "monstersinc_sully.gif",
+  "paw_patrol.gif",
+  "peppa_famil.gif",
+  "peppa_george.gif",
+  "pokemon_pikachu.gif",
+  "roblox_dance1.gif",
+  "sonic_run.gif",
+  "spiderman_dance.gif",
+  "spongebob_ukelele.gif",
+  "starwars_grogu.gif",
+  "teentitans_robin.gif",
+  "toystory_bullseye.gif",
+  "toystory_dance.gif",
+  "trolls_baby.gif",
+  "trolls_poppy.gif"
+]
+
 /**
  * Parses the URL to determine the operation and level of the quiz.
  * Sets the global `operation` and `level` variables and updates the test title.
@@ -188,7 +226,13 @@ function finishTest() {
   localStorage.setItem(`${operation}_${level}`, correctCount);
 
   if (correctCount === QUESTIONS_TOTAL) {
-    missedQuestions.innerHTML = `<p>Perfect score! 🎉</p>`;
+    const randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
+    missedQuestions.innerHTML = `
+      <div style="text-align: center;">
+        <p style="font-size: 1.2em;">Perfect score! 🎉</p>
+        <img src="../assets/gifs/${randomGif}" alt="Celebration Gif" style="max-width: 300px; margin-top: 10px;" />
+      </div>
+    `;
   } else if (wrongAnswers.length > 0) {
     missedQuestions.innerHTML = `<h3>Questions Missed:</h3><ul>` +
     wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
