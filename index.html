@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Math Timings</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
@@ -68,6 +68,15 @@
         <a href="tests/division_10.html" data-id="division_10">Mixed</a>
       </div>
     </div>
+  </div>
+  <div id="timer-toggle" style="position: fixed; bottom: 10px; left: 10px; background: #f9f9f9; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px;">
+    <label>
+      <input type="checkbox" id="show-timer" checked />
+      Show Timer
+    </label>
+  </div>
+  <div id="test-history-link" style="position: fixed; bottom: 16px; right: 10px;">
+    <a href="history.html" style="text-decoration: none; background: #f9f9f9; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px;">📊 View Test History</a>
   </div>
   <script src="index.js"></script>
 </body>

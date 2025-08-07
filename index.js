@@ -9,3 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const timerToggle = document.getElementById("show-timer");
+  const testLinks = document.querySelectorAll("a[data-id]");
+
+  testLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const href = link.getAttribute("href");
+      const timerEnabled = timerToggle.checked;
+
+      const finalUrl = timerEnabled ? href : `${href}?timer=off`;
+
+      window.location.href = finalUrl;
+    });
+  });
+});

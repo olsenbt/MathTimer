@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test History</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #eee;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Test History</h1>
+  <table id="history-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Test Type</th>
+        <th># Correct</th>
+        <th># Missed</th>
+        <th># Answered</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <script>
+    const tableBody = document.querySelector("#history-table tbody");
+    const history = JSON.parse(localStorage.getItem("testHistory") || "[]");
+
+    if (history.length === 0) {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td colspan="5">No test history yet.</td>`;
+      tableBody.appendChild(row);
+    } else {
+      history.reverse().forEach(entry => {
+        const row = document.createElement("tr");
+        const date = new Date(entry.startTime).toLocaleString();
+        row.innerHTML = `
+          <td>${date}</td>
+          <td>${entry.testType}</td>
+          <td>${entry.correct}</td>
+          <td>${entry.missed}</td>
+          <td>${entry.answered}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+  </script>
+</body>
+</html>

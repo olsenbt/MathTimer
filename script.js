@@ -14,6 +14,9 @@ let missedQuestions = document.getElementById("missed-questions");
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
 
+const urlParams = new URLSearchParams(window.location.search);
+const showTimer = urlParams.get("timer") !== "off";
+
 const perfectGifs = [
   "arthur_celebrate.gif",
   "bluey_bluey.gif",
@@ -52,6 +55,14 @@ const perfectGifs = [
   "trolls_poppy.gif"
 ]
 
+let testSession = {
+  startTime: new Date().toISOString(),
+  testType: "",
+  correct: 0,
+  missed: 0,
+  answered: 0
+};
+
 /**
  * Parses the URL to determine the operation and level of the quiz.
  * Sets the global `operation` and `level` variables and updates the test title.
@@ -70,10 +81,13 @@ function parseURL() {
 
   const isMixed = (level === 10);
   const symbol = symbols[operation];
+  testSession.testType = level === 10 ? `${symbol}Mixed` : `${symbol}${level}`;
   const levelLabel = isMixed ? "Mixed" : `${symbol}${level}`;
   testTitle.innerText = `${capitalize(operation)} ${levelLabel}`;
 
   document.body.classList.add(`${operation}-bg`);
+
+  
 }
 
 function capitalize(word) {
@@ -161,9 +175,16 @@ function startTest() {
   nextQuestion();
   timer = setInterval(() => {
     timeLeft--;
-    timerDisplay.textContent = formatTime(timeLeft);
+
+    if (showTimer) {
+      timerDisplay.textContent = formatTime(timeLeft);
+    }
     if (timeLeft <= 0) finishTest();
   }, 1000);
+
+  if (!showTimer) {
+    timerDisplay.textContent = "";
+  }
 }
 
 function formatTime(sec) {
@@ -204,8 +225,17 @@ function handleAnswer(e) {
     return;
   }
 
-  if (userAnswer === correct) correctCount++;
-  else wrongAnswers.push({ q: currentQ, correct });
+  testSession.answered++;
+
+  if (userAnswer === correct) {
+    correctCount++;
+    testSession.correct++;
+  } 
+  else {
+    testSession.missed++;
+    wrongAnswers.push({ q: currentQ, correct });
+  }
+
   currentQuestionIndex++;
   nextQuestion();
 }
@@ -240,6 +270,10 @@ function finishTest() {
   } else {
     missedQuestions.innerHTML = `<p>You didn't answer any questions.</p>`;
   }
+
+  let history = JSON.parse(localStorage.getItem("testHistory") || "[]");
+  history.push(testSession);
+  localStorage.setItem("testHistory", JSON.stringify(history));
 }
 
 answerInput.addEventListener("input", () => {

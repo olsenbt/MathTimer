@@ -18,13 +18,14 @@
       <span id="question-counter"></span>
     </div>
     <div id="question-box"></div>
-    <input type="number" id="answer-input" autocomplete="off" />
+    <input type="text" id="answer-input" autocomplete="off" maxlength="4"/>
   </div>
 
   <div id="end-screen" class="screen hidden">
     <h2>Test Complete!</h2>
     <p id="score-summary"></p>
     <div id="missed-questions"></div>
+    <p>Don't click return home until your teacher has recorded your score</p>
     <button onclick="window.location.href='../index.html'">Return to Home</button>
   </div>
 
