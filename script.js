@@ -15,7 +15,9 @@ let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_
 let wrongAnswers = [];
 
 const urlParams = new URLSearchParams(window.location.search);
+const testId = urlParams.get("test");
 const showTimer = urlParams.get("timer") !== "off";
+
 
 const perfectGifs = [
   "arthur_celebrate.gif",
@@ -63,15 +65,39 @@ let testSession = {
   answered: 0
 };
 
-/**
- * Parses the URL to determine the operation and level of the quiz.
- * Sets the global `operation` and `level` variables and updates the test title.
- */
-function parseURL() {
-  const params = new URLSearchParams(window.location.search);
-  operation = params.get("operation");
-  level = parseInt(params.get("level"));
+async function loadTest() {
+  if (!testId) {
+    alert("No test selected");
+    return;
+  }
 
+  try {
+    const res = await fetch(`../tests/${testId}.json`);
+    const data = await res.json();
+
+    testTitle.innerText = data.test_name;
+    const testSubtitle = document.getElementById("test-subtitle");
+    if (data.test_subtitle && data.test_subtitle.trim() !== "") {
+      testSubtitle.textContent = data.test_subtitle;
+      testSubtitle.style.display = "block";
+    }
+
+    const bank = data.questions.map(q => ({
+      question: q.question,
+      answer: parseInt(q.answer)
+    }));
+    
+    questions = sampleQuestions(bank);
+
+    parseURLFromTestId(testId);
+  } catch (err) {
+    console.error("Failed to load test:", err);
+  }
+}
+
+function parseURLFromTestId(id) {
+  [operation, level] = id.split("_");
+  level = parseInt(level);
   const symbols = {
     addition: "+",
     subtraction: "-",
@@ -79,11 +105,9 @@ function parseURL() {
     division: "÷"
   };
 
-  const isMixed = (level === 10);
-  const symbol = symbols[operation];
-  testSession.testType = isMixed ? `${symbol}Mixed` : `${symbol}${level}`;
-  const levelLabel = isMixed ? "Mixed" : `${symbol}${level}`;
-  testTitle.innerText = `${capitalize(operation)} ${levelLabel}`;
+  const symbol = symbols[operation] || "?";
+  const levelLabel = (level === 10) ? "Mixed" : `${symbol}${level}`;
+  testSession.testType = levelLabel;
 
   document.body.classList.add(`${operation}-bg`);
 }
@@ -92,60 +116,9 @@ function capitalize(word) {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function generateBank() {
-  let bank = new Set();
-
-  let levelsToGenerate = [];
-  // Handle Mixed Level
-  if (level == 10) {
-    // Add levels 2 through 9
-    for (let l = 2; l <= 9; l++) {
-      levelsToGenerate.push(l);
-    }
-  } else {
-    // Only generate one level
-    levelsToGenerate.push(level)
-  }
-
-
-  for(let level of levelsToGenerate) {
-    if(operation == "addition") {
-      for (let i = 0; i < 10; i++) {
-          bank.add(`${level}+${i}`);
-          bank.add(`${i}+${level}`);
-          console.log(`${level}+${i}`);
-          console.log(`${i}+${level}`);
-      }
-    } else if (operation == "multiplication") {
-      for (let i = 0; i < 10; i++) {
-          bank.add(`${level}*${i}`);
-          console.log(`${level}*${i}`);
-          if(i != level) {
-              bank.add(`${i}*${level}`);
-              console.log(`${i}*${level}`);
-          }
-      }
-    } else if (operation == "subtraction") {
-      for (let i = level + 9; i >= level; i--) {
-          bank.add(`${i}-${level}`);
-          console.log(`${i}-${level}`);
-      }
-    } else if (operation == "division") {
-      for (let i = 1; i <= 9; i++) {
-          let dividend = i * level;
-          let divisor = level;
-          bank.add(`${dividend}/${divisor}`);
-          console.log(`${dividend}/${divisor}`);
-      }
-    } else {
-      console.log("unknown type " + operation)
-    }
-  }
-  return Array.from(bank);
-}
-
 function sampleQuestions(bank) {
   const all = [];
+  const total = Math.min(QUESTIONS_TOTAL, bank.length * Math.ceil(QUESTIONS_TOTAL / bank.length));
 
   while (all.length < QUESTIONS_TOTAL) {
     const pool = [...bank];
@@ -200,17 +173,11 @@ function nextQuestion() {
 }
 
 function formatQuestion(q) {
-  return q.replace("*", "×").replace("/", "÷");
+  return q.question.replace("*", "x").replace("/", "÷");
 }
 
 function evaluate(q) {
-  const [a, op, b] = q.match(/(\d+)([+\-*/])(\d+)/).slice(1);
-  switch (op) {
-    case "+": return parseInt(a) + parseInt(b);
-    case "-": return parseInt(a) - parseInt(b);
-    case "*": return parseInt(a) * parseInt(b);
-    case "/": return parseInt(a) / parseInt(b);
-  }
+  return q.answer;
 }
 
 function handleAnswer(e) {
@@ -279,8 +246,6 @@ answerInput.addEventListener("input", () => {
 });
 
 // Init
-parseURL();
-const bank = generateBank();
-questions = sampleQuestions(bank);
 startBtn.addEventListener("click", startTest);
 answerInput.addEventListener("keydown", handleAnswer);
+loadTest();

@@ -1,0 +1,56 @@
+{
+    "test_name": "Subtraction -9",
+    "test_subtitle": "",
+    "questions": [
+        {
+            "id": 1,
+            "question": "18 - 9",
+            "answer": "9"
+        },
+        {
+            "id": 2,
+            "question": "17 - 9",
+            "answer": "8"
+        },
+        {
+            "id": 3,
+            "question": "16 - 9",
+            "answer": "7"
+        },
+        {
+            "id": 4,
+            "question": "15 - 9",
+            "answer": "6"
+        },
+        {
+            "id": 5,
+            "question": "14 - 9",
+            "answer": "5"
+        },
+        {
+            "id": 6,
+            "question": "13 - 9",
+            "answer": "4"
+        },
+        {
+            "id": 7,
+            "question": "12 - 9",
+            "answer": "3"
+        },
+        {
+            "id": 8,
+            "question": "11 - 9",
+            "answer": "2"
+        },
+        {
+            "id": 9,
+            "question": "10 - 9",
+            "answer": "1"
+        },
+        {
+            "id": 10,
+            "question": "9 - 9",
+            "answer": "0"
+        }
+    ]
+}

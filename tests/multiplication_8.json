@@ -1,0 +1,101 @@
+{
+    "test_name": "Multiplication x8",
+    "test_subtitle": "",
+    "questions": [
+        {
+            "id": 1,
+            "question": "8 * 0",
+            "answer": "0"
+        },
+        {
+            "id": 2,
+            "question": "0 * 8",
+            "answer": "0"
+        },
+        {
+            "id": 3,
+            "question": "8 * 1",
+            "answer": "8"
+        },
+        {
+            "id": 4,
+            "question": "1 * 8",
+            "answer": "8"
+        },
+        {
+            "id": 5,
+            "question": "8 * 2",
+            "answer": "16"
+        },
+        {
+            "id": 6,
+            "question": "2 * 8",
+            "answer": "16"
+        },
+        {
+            "id": 7,
+            "question": "8 * 3",
+            "answer": "24"
+        },
+        {
+            "id": 8,
+            "question": "3 * 8",
+            "answer": "24"
+        },
+        {
+            "id": 9,
+            "question": "8 * 4",
+            "answer": "32"
+        },
+        {
+            "id": 10,
+            "question": "4 * 8",
+            "answer": "32"
+        },
+        {
+            "id": 11,
+            "question": "8 * 5",
+            "answer": "40"
+        },
+        {
+            "id": 12,
+            "question": "5 * 8",
+            "answer": "40"
+        },
+        {
+            "id": 13,
+            "question": "8 * 6",
+            "answer": "48"
+        },
+        {
+            "id": 14,
+            "question": "6 * 8",
+            "answer": "48"
+        },
+        {
+            "id": 15,
+            "question": "8 * 7",
+            "answer": "56"
+        },
+        {
+            "id": 16,
+            "question": "7 * 8",
+            "answer": "56"
+        },
+        {
+            "id": 17,
+            "question": "8 * 8",
+            "answer": "64"
+        },
+        {
+            "id": 18,
+            "question": "8 * 9",
+            "answer": "72"
+        },
+        {
+            "id": 19,
+            "question": "9 * 8",
+            "answer": "72"
+        }
+    ]
+}
