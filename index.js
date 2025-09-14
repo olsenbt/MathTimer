@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const href = link.getAttribute("href");
       const timerEnabled = timerToggle.checked;
-
-      const finalUrl = timerEnabled ? href : `${href}?timer=off`;
+      const finalUrl = timerEnabled ? href : `${href}&timer=off`;
 
       window.location.href = finalUrl;
     });

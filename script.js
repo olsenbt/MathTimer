@@ -68,26 +68,24 @@ let testSession = {
  * Sets the global `operation` and `level` variables and updates the test title.
  */
 function parseURL() {
-  const path = window.location.pathname;
-  const file = path.split("/").pop().replace(".html", "");
-  [operation, level] = file.split("_");
-  level = parseInt(level);
+  const params = new URLSearchParams(window.location.search);
+  operation = params.get("operation");
+  level = parseInt(params.get("level"));
+
   const symbols = {
     addition: "+",
     subtraction: "-",
-    multiplication: "×",
+    multiplication: "x",
     division: "÷"
   };
 
   const isMixed = (level === 10);
   const symbol = symbols[operation];
-  testSession.testType = level === 10 ? `${symbol}Mixed` : `${symbol}${level}`;
+  testSession.testType = isMixed ? `${symbol}Mixed` : `${symbol}${level}`;
   const levelLabel = isMixed ? "Mixed" : `${symbol}${level}`;
   testTitle.innerText = `${capitalize(operation)} ${levelLabel}`;
 
   document.body.classList.add(`${operation}-bg`);
-
-  
 }
 
 function capitalize(word) {
