@@ -82,7 +82,7 @@ button:hover {
 
 .levels a {
   display: inline-block;
-  width: 60px;
+  width: 120px;
   height: 60px;
   line-height: 60px;
   margin: 0.5rem;
@@ -185,4 +185,8 @@ button:hover {
 
 .division-bg #start-btn:hover {
   background-color: #c96202;
+}
+
+.katex {
+  font-family: Arial, sans-serif;
 }

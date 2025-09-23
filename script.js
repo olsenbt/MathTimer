@@ -167,7 +167,10 @@ function formatTime(sec) {
 function nextQuestion() {
   if (currentQuestionIndex >= QUESTIONS_TOTAL) return finishTest();
   const q = questions[currentQuestionIndex];
-  questionBox.textContent = formatQuestion(q);
+
+  questionBox.innerHTML = "";
+  katex.render(q.question, questionBox, { throwOnError: false});
+  
   questionCounter.textContent = `Question ${currentQuestionIndex + 1}/30`;
   answerInput.value = "";
 }

@@ -1,0 +1,96 @@
+{
+    "test_name": "Multiplication x12",
+    "test_subtitle": "",
+    "questions": [
+        {
+            "id": 1,
+            "question": "12 * 10",
+            "answer": "0"
+        },
+        {
+            "id": 2,
+            "question": "10 * 12",
+            "answer": "0"
+        },
+        {
+            "id": 5,
+            "question": "12 * 2",
+            "answer": "24"
+        },
+        {
+            "id": 6,
+            "question": "2 * 12",
+            "answer": "24"
+        },
+        {
+            "id": 7,
+            "question": "12 * 3",
+            "answer": "36"
+        },
+        {
+            "id": 8,
+            "question": "3 * 12",
+            "answer": "36"
+        },
+        {
+            "id": 9,
+            "question": "12 * 4",
+            "answer": "48"
+        },
+        {
+            "id": 10,
+            "question": "4 * 12",
+            "answer": "48"
+        },
+        {
+            "id": 11,
+            "question": "12 * 5",
+            "answer": "60"
+        },
+        {
+            "id": 12,
+            "question": "5 * 12",
+            "answer": "60"
+        },
+        {
+            "id": 13,
+            "question": "12 * 6",
+            "answer": "72"
+        },
+        {
+            "id": 14,
+            "question": "6 * 12",
+            "answer": "72"
+        },
+        {
+            "id": 15,
+            "question": "12 * 7",
+            "answer": "84"
+        },
+        {
+            "id": 16,
+            "question": "7 * 12",
+            "answer": "84"
+        },
+        {
+            "id": 17,
+            "question": "12 * 8",
+            "answer": "96"
+        },
+        {
+            "id": 18,
+            "question": "8 * 12",
+            "answer": "96"
+        },
+        {
+            "id": 19,
+            "question": "12 * 9",
+            "answer": "108"
+        },
+        {
+            "id": 20,
+            "question": "9 * 12",
+            "answer": "108"
+        }
+    ]
+}

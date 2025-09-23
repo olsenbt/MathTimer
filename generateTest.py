@@ -7,7 +7,7 @@ def generate_bank(operation: str, level: int):
     qid = 1
 
     levels_to_generate = []
-    if level == 10:  # Mixed
+    if level == 13:  # Mixed
         levels_to_generate = list(range(2, 10))
     else:
         levels_to_generate = [level]
