@@ -190,3 +190,7 @@ button:hover {
 .katex {
   font-family: Arial, sans-serif;
 }
+
+.disabled {
+  display: none !important;
+}
