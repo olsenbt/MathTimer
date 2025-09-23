@@ -72,7 +72,7 @@ async function loadTest() {
   }
 
   try {
-    const res = await fetch(`../tests/${testId}.json`);
+    const res = await fetch(`tests/${testId}.json`);
     const data = await res.json();
 
     testTitle.innerText = data.test_name;
@@ -228,7 +228,7 @@ function finishTest() {
     missedQuestions.innerHTML = `
       <div style="text-align: center;">
         <p style="font-size: 1.2em;">Perfect score! 🎉</p>
-        <img src="../assets/gifs/${randomGif}" alt="Celebration Gif" style="max-width: 300px; margin-top: 10px;" />
+        <img src="assets/gifs/${randomGif}" alt="Celebration Gif" style="max-width: 300px; margin-top: 10px;" />
       </div>
     `;
   } else if (wrongAnswers.length > 0) {
