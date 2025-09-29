@@ -197,6 +197,24 @@ button:hover {
   background-color: #c96202;
 }
 
+/* Division 2 */
+.division2-levels a {
+  background-color: #bebc10;
+}
+.division2-levels a:hover {
+  background-color: #a5a314;
+}
+.division2-bg {
+  background-color: #ffffe7;
+}
+.division2-bg #start-btn {
+  background-color: #bebc10;
+  color: white;
+}
+.division2-bg #start-btn:hover {
+  background-color: #a5a314;
+}
+
 
 .katex {
   font-family: Arial, sans-serif;
@@ -204,4 +222,53 @@ button:hover {
 
 .disabled {
   display: none !important;
+}
+
+.long-division {
+  display: inline-flex;
+  align-items: flex-start;
+  font-family: inherit;
+  font-size: 3rem;
+  line-height: 1;
+  position: relative;
+}
+
+/* divisor with tall bar that overlaps the top line */
+.long-division .divisor {
+  border-right: 3px solid #222;
+  padding-right: 0.6rem;
+  margin-right: -0.1rem;
+  display: inline-flex;
+  align-items: center;
+  min-width: 1ch;
+  position: relative;
+  z-index: 1;
+}
+
+/* dividend with top line */
+.long-division .dividend {
+  border-top: 3px solid #222;
+  padding: 0.25rem 0.6rem;
+  display: inline-block;
+  text-align: left;
+  min-width: 1.5ch;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* optional quotient */
+.long-division .quotient {
+  display: block;
+  position: relative;
+  left: 0.75rem;
+  top: -1.1em;
+  font-size: 0.6em;
+  white-space: nowrap;
+}
+
+/* mobile tweaks */
+@media (max-width: 520px) {
+  .long-division { font-size: 2rem; }
+  .long-division .divisor { padding-right: 0.4rem; margin-right: 0.4rem; }
+  .long-division .dividend { padding: 0.2rem 0.4rem; }
 }

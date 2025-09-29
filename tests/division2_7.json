@@ -1,0 +1,51 @@
+{
+    "test_name": "Division \u00f77",
+    "test_subtitle": "",
+    "questions": [
+        {
+            "id": 1,
+            "question": "7 / 7",
+            "answer": "1"
+        },
+        {
+            "id": 2,
+            "question": "14 / 7",
+            "answer": "2"
+        },
+        {
+            "id": 3,
+            "question": "21 / 7",
+            "answer": "3"
+        },
+        {
+            "id": 4,
+            "question": "28 / 7",
+            "answer": "4"
+        },
+        {
+            "id": 5,
+            "question": "35 / 7",
+            "answer": "5"
+        },
+        {
+            "id": 6,
+            "question": "42 / 7",
+            "answer": "6"
+        },
+        {
+            "id": 7,
+            "question": "49 / 7",
+            "answer": "7"
+        },
+        {
+            "id": 8,
+            "question": "56 / 7",
+            "answer": "8"
+        },
+        {
+            "id": 9,
+            "question": "63 / 7",
+            "answer": "9"
+        }
+    ]
+}

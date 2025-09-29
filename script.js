@@ -77,6 +77,31 @@ let testSession = {
   answered: 0
 };
 
+// Render a simple long-division HTML for strings like "10 / 2" or "24 / 6"
+function renderLongDivisionFromString(qStr, showQuotient = false, quotientValue = "") {
+  // Accept formats like "10 / 2" or "10/2" (spaces optional)
+  const m = qStr.match(/^\s*(\d+)\s*\/\s*(\d+)\s*$/);
+  if (!m) return null;
+  const dividend = m[1];
+  const divisor  = m[2];
+
+  // optional quotient above the dividend
+  const quotientSpan = showQuotient && quotientValue !== ""
+    ? `<span class="quotient">${quotientValue}</span>`
+    : "";
+
+  // Build markup: divisor | overline(dividend)
+  return `
+    <span class="long-division" role="img" aria-label="long division">
+      <span class="divisor">${divisor}</span>
+      <span>
+        ${quotientSpan}
+        <span class="dividend">${dividend}</span>
+      </span>
+    </span>
+  `;
+}
+
 async function loadTest() {
   if (!testId) {
     alert("No test selected");
@@ -182,10 +207,25 @@ function nextQuestion() {
 
   questionBox.innerHTML = "";
 
-  let displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
-  katex.render(displayQ, questionBox, { throwOnError: false});
-  
-  questionCounter.textContent = `Question ${currentQuestionIndex + 1}/30`;
+  // If this is a Division 2 test (your test ids use "division2_X"), render long division
+  if (operation && operation.startsWith("division2")) {
+    // Try to create the long-division HTML from the raw question string
+    const longHTML = renderLongDivisionFromString(q.question);
+
+    if (longHTML) {
+      questionBox.innerHTML = longHTML;
+    } else {
+      // fallback to KaTeX (in case question isn't a plain "a / b")
+      const displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
+      katex.render(displayQ, questionBox, { throwOnError: false });
+    }
+  } else {
+    // Normal path: render with KaTeX (as before)
+    const displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
+    katex.render(displayQ, questionBox, { throwOnError: false });
+  }
+
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1}/${QUESTIONS_TOTAL}`;
   answerInput.value = "";
 }
 
