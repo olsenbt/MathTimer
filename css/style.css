@@ -107,85 +107,96 @@ button:hover {
 */
 
 /* Category-specific colors */
+/* Addition */
 .addition-levels a {
   background-color: #007bff;
 }
 .addition-levels a:hover {
   background-color: #0056b3;
 }
+.addition-bg {
+  background-color: #e0f0ff; 
+}
+.addition-bg #start-btn {
+  background-color: #007bff;
+  color: white;
+}
+.addition-bg #start-btn:hover {
+  background-color: #0056b3;
+}
 
+/* Subtraction */
 .subtraction-levels a {
   background-color: #dc3545;
 }
 .subtraction-levels a:hover {
   background-color: #a71d2a;
 }
+.subtraction-bg {
+  background-color: #ffe6e6;
+}
+.subtraction-bg #start-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.subtraction-bg #start-btn:hover {
+  background-color: #a71d2a;
+}
 
+/* Multiplication */
 .multiplication-levels a {
   background-color: #6f42c1;
 }
 .multiplication-levels a:hover {
   background-color: #5936a2;
 }
+.multiplication-bg {
+  background-color: #f0e6ff;
+}
+.multiplication-bg #start-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+.multiplication-bg #start-btn:hover {
+  background-color: #5936a2;
+}
 
+/* Multiplication 2*/
+.multiplication2-levels a {
+  background-color: #2d835b;
+}
+.multiplication2-levels a:hover {
+  background-color: #135536;
+}
+.multiplication2-bg {
+  background-color: #e8f7ec;
+}
+.multiplication2-bg #start-btn {
+  background-color: #2d835b;
+  color: white;
+}
+.multiplication2-bg #start-btn:hover {
+  background-color: #135536;
+}
+
+/* Division */
 .division-levels a {
   background-color: #ff7f07;
 }
 .division-levels a:hover {
   background-color: #c96202;
 }
-
-.addition-bg {
-  background-color: #e0f0ff; 
-}
-
-.subtraction-bg {
-  background-color: #ffe6e6;
-}
-
-.multiplication-bg {
-  background-color: #f0e6ff;
-}
-
 .division-bg {
   background-color: #fff3e0;
 }
-
-.addition-bg #start-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.addition-bg #start-btn:hover {
-  background-color: #0056b3;
-}
-
-.subtraction-bg #start-btn {
-  background-color: #dc3545;
-  color: white;
-}
-
-.subtraction-bg #start-btn:hover {
-  background-color: #a71d2a;
-}
-
-.multiplication-bg #start-btn {
-  background-color: #6f42c1;
-  color: white;
-}
-
-.multiplication-bg #start-btn:hover {
-  background-color: #5936a2;
-}
-
 .division-bg #start-btn {
   background-color: #ff7f07;
   color: white;
 }
-
 .division-bg #start-btn:hover {
   background-color: #c96202;
 }
+
 
 .katex {
   font-family: Arial, sans-serif;

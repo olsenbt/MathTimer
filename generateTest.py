@@ -21,12 +21,27 @@ def generate_bank(operation: str, level: int):
                 qid += 1
 
         elif operation == "multiplication":
-            for i in range(10):
-                bank.append({"id": qid, "question": f"{lvl} * {i}", "answer": str(lvl * i)})
-                qid += 1
-                if i != lvl:  # avoid duplicate
-                    bank.append({"id": qid, "question": f"{i} * {lvl}", "answer": str(i * lvl)})
+            if lvl == "half":  # Special case: 1/2
+                for i in range(0, 51, 2):  # even numbers 0–50
+                    bank.append({
+                        "id": qid,
+                        "question": f"\\frac{{1}}{{2}} * {i}",
+                        "answer": str(i // 2)
+                    })
                     qid += 1
+                    bank.append({
+                        "id": qid,
+                        "question": f"{i} * \\frac{{1}}{{2}}",
+                        "answer": str(i // 2)
+                    })
+                    qid += 1
+            else:
+                for i in range(10):
+                    bank.append({"id": qid, "question": f"{lvl} * {i}", "answer": str(lvl * i)})
+                    qid += 1
+                    if i != lvl:  # avoid duplicate
+                        bank.append({"id": qid, "question": f"{i} * {lvl}", "answer": str(i * lvl)})
+                        qid += 1
 
         elif operation == "subtraction":
             for i in range(lvl + 9, lvl - 1, -1):
@@ -67,7 +82,7 @@ def generate_test_file(operation: str, level: int, test_name: str, test_subtitle
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("operation", choices=["addition", "subtraction", "multiplication", "division"])
-    parser.add_argument("level", type=int, help="Difficulty level (2-9, or 10 for mixed)")
+    parser.add_argument("level", help="Difficulty level (2-9, or 10 for mixed, or 'half')")
     parser.add_argument("--name", default="Untitled Test", help="Test name for the JSON file")
     parser.add_argument("--subtitle", default="", help="Test subtitle for the JSON file")
     parser.add_argument("--output", default="tests", help="Output folder")
