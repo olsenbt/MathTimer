@@ -18,7 +18,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const testId = urlParams.get("test");
 const showTimer = urlParams.get("timer") !== "off";
 
-
 const perfectGifs = [
   "arthur_celebrate.gif",
   "bluey_bluey.gif",
@@ -182,7 +181,9 @@ function nextQuestion() {
   const q = questions[currentQuestionIndex];
 
   questionBox.innerHTML = "";
-  katex.render(q.question, questionBox, { throwOnError: false});
+
+  let displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
+  katex.render(displayQ, questionBox, { throwOnError: false});
   
   questionCounter.textContent = `Question ${currentQuestionIndex + 1}/30`;
   answerInput.value = "";
@@ -249,7 +250,7 @@ function finishTest() {
     wrongAnswers.map(w => `<li>${formatQuestion(w.q)} = ${w.correct}</li>`).join('') +
       `</ul>`;
   } else {
-    missedQuestions.innerHTML = `<p>You didn't answer any questions.</p>`;
+    missedQuestions.innerHTML = `<p>You didn't answer all of the questions.</p>`;
   }
 
   let history = JSON.parse(localStorage.getItem("testHistory") || "[]");
