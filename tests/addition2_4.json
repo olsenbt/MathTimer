@@ -1,0 +1,96 @@
+{
+    "test_name": "Make 10",
+    "test_subtitle": "Fill in the missing number",
+    "questions": [
+        {
+            "id": 1,
+            "question": "□ + 1 = 10",
+            "answer": "9"
+        },
+        {
+            "id": 2,
+            "question": "1 + □ = 10",
+            "answer": "9"
+        },
+        {
+            "id": 3,
+            "question": "□ + 2 = 10",
+            "answer": "8"
+        },
+        {
+            "id": 4,
+            "question": "2 + □ = 10",
+            "answer": "8"
+        },
+        {
+            "id": 5,
+            "question": "□ + 3 = 10",
+            "answer": "7"
+        },
+        {
+            "id": 6,
+            "question": "3 + □ = 10",
+            "answer": "7"
+        },
+        {
+            "id": 7,
+            "question": "□ + 4 = 10",
+            "answer": "6"
+        },
+        {
+            "id": 8,
+            "question": "4 + □ = 10",
+            "answer": "6"
+        },
+        {
+            "id": 9,
+            "question": "□ + 5 = 10",
+            "answer": "5"
+        },
+        {
+            "id": 10,
+            "question": "5 + □ = 10",
+            "answer": "5"
+        },
+        {
+            "id": 11,
+            "question": "□ + 6 = 10",
+            "answer": "4"
+        },
+        {
+            "id": 12,
+            "question": "6 + □ = 10",
+            "answer": "4"
+        },
+        {
+            "id": 13,
+            "question": "□ + 7 = 10",
+            "answer": "3"
+        },
+        {
+            "id": 14,
+            "question": "7 + □ = 10",
+            "answer": "3"
+        },
+        {
+            "id": 15,
+            "question": "□ + 8 = 10",
+            "answer": "2"
+        },
+        {
+            "id": 16,
+            "question": "8 + □ = 10",
+            "answer": "2"
+        },
+        {
+            "id": 17,
+            "question": "□ + 9 = 10",
+            "answer": "1"
+        },
+        {
+            "id": 18,
+            "question": "9 + □ = 10",
+            "answer": "1"
+        }
+    ]
+}

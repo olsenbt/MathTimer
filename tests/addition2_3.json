@@ -1,0 +1,166 @@
+{
+    "test_name": "Doubles ±1 Facts",
+    "test_subtitle": "",
+    "questions": [
+        {
+            "id": 1,
+            "question": "2 + 1",
+            "answer": "3"
+        },
+        {
+            "id": 2,
+            "question": "1 + 2",
+            "answer": "3"
+        },
+        {
+            "id": 3,
+            "question": "2 + 3",
+            "answer": "5"
+        },
+        {
+            "id": 4,
+            "question": "3 + 2",
+            "answer": "5"
+        },
+        {
+            "id": 5,
+            "question": "3 + 2",
+            "answer": "5"
+        },
+        {
+            "id": 6,
+            "question": "2 + 3",
+            "answer": "5"
+        },
+        {
+            "id": 7,
+            "question": "3 + 4",
+            "answer": "7"
+        },
+        {
+            "id": 8,
+            "question": "4 + 3",
+            "answer": "7"
+        },
+        {
+            "id": 9,
+            "question": "4 + 3",
+            "answer": "7"
+        },
+        {
+            "id": 10,
+            "question": "3 + 4",
+            "answer": "7"
+        },
+        {
+            "id": 11,
+            "question": "4 + 5",
+            "answer": "9"
+        },
+        {
+            "id": 12,
+            "question": "5 + 4",
+            "answer": "9"
+        },
+        {
+            "id": 13,
+            "question": "5 + 4",
+            "answer": "9"
+        },
+        {
+            "id": 14,
+            "question": "4 + 5",
+            "answer": "9"
+        },
+        {
+            "id": 15,
+            "question": "5 + 6",
+            "answer": "11"
+        },
+        {
+            "id": 16,
+            "question": "6 + 5",
+            "answer": "11"
+        },
+        {
+            "id": 17,
+            "question": "6 + 5",
+            "answer": "11"
+        },
+        {
+            "id": 18,
+            "question": "5 + 6",
+            "answer": "11"
+        },
+        {
+            "id": 19,
+            "question": "6 + 7",
+            "answer": "13"
+        },
+        {
+            "id": 20,
+            "question": "7 + 6",
+            "answer": "13"
+        },
+        {
+            "id": 21,
+            "question": "7 + 6",
+            "answer": "13"
+        },
+        {
+            "id": 22,
+            "question": "6 + 7",
+            "answer": "13"
+        },
+        {
+            "id": 23,
+            "question": "7 + 8",
+            "answer": "15"
+        },
+        {
+            "id": 24,
+            "question": "8 + 7",
+            "answer": "15"
+        },
+        {
+            "id": 25,
+            "question": "8 + 7",
+            "answer": "15"
+        },
+        {
+            "id": 26,
+            "question": "7 + 8",
+            "answer": "15"
+        },
+        {
+            "id": 27,
+            "question": "8 + 9",
+            "answer": "17"
+        },
+        {
+            "id": 28,
+            "question": "9 + 8",
+            "answer": "17"
+        },
+        {
+            "id": 29,
+            "question": "9 + 8",
+            "answer": "17"
+        },
+        {
+            "id": 30,
+            "question": "8 + 9",
+            "answer": "17"
+        },
+        {
+            "id": 31,
+            "question": "9 + 10",
+            "answer": "19"
+        },
+        {
+            "id": 32,
+            "question": "10 + 9",
+            "answer": "19"
+        }
+    ]
+}
