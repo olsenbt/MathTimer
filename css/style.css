@@ -124,6 +124,13 @@ button:hover {
 .addition-bg #start-btn:hover {
   background-color: #0056b3;
 }
+.addition-bg .home-btn {
+  background-color: #007bff;
+  color: white;
+}
+.addition-bg .home-btn:hover {
+  background-color: #0056b3;
+}
 
 /* Subtraction */
 .subtraction-levels a {
@@ -140,6 +147,13 @@ button:hover {
   color: white;
 }
 .subtraction-bg #start-btn:hover {
+  background-color: #a71d2a;
+}
+.subtraction-bg .home-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.subtraction-bg .home-btn:hover {
   background-color: #a71d2a;
 }
 
@@ -160,6 +174,13 @@ button:hover {
 .multiplication-bg #start-btn:hover {
   background-color: #5936a2;
 }
+.multiplication-bg .home-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+.multiplication-bg .home-btn:hover {
+  background-color: #5936a2;
+}
 
 /* Multiplication 2*/
 .multiplication2-levels a {
@@ -176,6 +197,13 @@ button:hover {
   color: white;
 }
 .multiplication2-bg #start-btn:hover {
+  background-color: #135536;
+}
+.multiplication2-bg .home-btn {
+  background-color: #2d835b;
+  color: white;
+}
+.multiplication2-bg .home-btn:hover {
   background-color: #135536;
 }
 
@@ -196,6 +224,13 @@ button:hover {
 .division-bg #start-btn:hover {
   background-color: #c96202;
 }
+.division-bg .home-btn {
+  background-color: #ff7f07;
+  color: white;
+}
+.division-bg .home-btn:hover {
+  background-color: #c96202;
+}
 
 /* Division 2 */
 .division2-levels a {
@@ -212,6 +247,13 @@ button:hover {
   color: white;
 }
 .division2-bg #start-btn:hover {
+  background-color: #a5a314;
+}
+.division2-bg .home-btn {
+  background-color: #bebc10;
+  color: white;
+}
+.division2-bg .home-btn:hover {
   background-color: #a5a314;
 }
 

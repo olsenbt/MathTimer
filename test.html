@@ -15,15 +15,18 @@
     <h1 id="test-title"></h1>
     <div id="test-subtitle"></div>
     <button id="start-btn">Start</button>
+    <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
   </div>
 
   <div id="test-screen" class="screen hidden">
     <div class="test-header">
+      <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
       <span id="timer">2:00</span>
       <span id="question-counter"></span>
     </div>
     <div id="question-box"></div>
     <input type="text" id="answer-input" autocomplete="off" maxlength="4"/>
+    
   </div>
 
   <div id="end-screen" class="screen hidden">
@@ -31,7 +34,7 @@
     <p id="score-summary"></p>
     <div id="missed-questions"></div>
     <p>Don't click return home until your teacher has recorded your score</p>
-    <button onclick="window.location.href='index.html'">Return to Home</button>
+    <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
   </div>
 
   <script src="script.js"></script>
