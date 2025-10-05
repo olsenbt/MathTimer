@@ -1,0 +1,96 @@
+{
+    "test_name": "Back to Ten",
+    "test_subtitle": "Subtracting numbers to equal 10",
+    "questions": [
+        {
+            "id": 1,
+            "question": "19 - ☐ = 10",
+            "answer": "9"
+        },
+        {
+            "id": 2,
+            "question": "18 - ☐ = 10",
+            "answer": "8"
+        },
+        {
+            "id": 3,
+            "question": "17 - ☐ = 10",
+            "answer": "7"
+        },
+        {
+            "id": 4,
+            "question": "16 - ☐ = 10",
+            "answer": "6"
+        },
+        {
+            "id": 5,
+            "question": "15 - ☐ = 10",
+            "answer": "5"
+        },
+        {
+            "id": 6,
+            "question": "14 - ☐ = 10",
+            "answer": "4"
+        },
+        {
+            "id": 7,
+            "question": "13 - ☐ = 10",
+            "answer": "3"
+        },
+        {
+            "id": 8,
+            "question": "12 - ☐ = 10",
+            "answer": "2"
+        },
+        {
+            "id": 9,
+            "question": "11 - ☐ = 10",
+            "answer": "1"
+        },
+        {
+            "id": 10,
+            "question": "☐ - 9 = 10",
+            "answer": "19"
+        },
+        {
+            "id": 11,
+            "question": "☐ - 8 = 10",
+            "answer": "18"
+        },
+        {
+            "id": 12,
+            "question": "☐ - 7 = 10",
+            "answer": "17"
+        },
+        {
+            "id": 13,
+            "question": "☐ - 6 = 10",
+            "answer": "16"
+        },
+        {
+            "id": 14,
+            "question": "☐ - 5 = 10",
+            "answer": "15"
+        },
+        {
+            "id": 15,
+            "question": "☐ - 4 = 10",
+            "answer": "14"
+        },
+        {
+            "id": 16,
+            "question": "☐ - 3 = 10",
+            "answer": "13"
+        },
+        {
+            "id": 17,
+            "question": "☐ - 2 = 10",
+            "answer": "12"
+        },
+        {
+            "id": 18,
+            "question": "☐ - 1 = 10",
+            "answer": "11"
+        }
+    ]
+}

@@ -1,0 +1,2436 @@
+{
+    "test_name": "Balanced Equations",
+    "test_subtitle": "Make the sum on each side of the = sign the same",
+    "questions": [
+        {
+            "id": 1,
+            "question": "□ + 1 = 2",
+            "answer": "1"
+        },
+        {
+            "id": 2,
+            "question": "1 + □ = 2",
+            "answer": "1"
+        },
+        {
+            "id": 3,
+            "question": "1 + 1 = □",
+            "answer": "2"
+        },
+        {
+            "id": 4,
+            "question": "□ = 1 + 1",
+            "answer": "2"
+        },
+        {
+            "id": 5,
+            "question": "2 = □ + 1",
+            "answer": "1"
+        },
+        {
+            "id": 6,
+            "question": "2 = 1 + □",
+            "answer": "1"
+        },
+        {
+            "id": 7,
+            "question": "□ + 2 = 3",
+            "answer": "1"
+        },
+        {
+            "id": 8,
+            "question": "1 + □ = 3",
+            "answer": "2"
+        },
+        {
+            "id": 9,
+            "question": "1 + 2 = □",
+            "answer": "3"
+        },
+        {
+            "id": 10,
+            "question": "□ = 1 + 2",
+            "answer": "3"
+        },
+        {
+            "id": 11,
+            "question": "3 = □ + 2",
+            "answer": "1"
+        },
+        {
+            "id": 12,
+            "question": "3 = 1 + □",
+            "answer": "2"
+        },
+        {
+            "id": 13,
+            "question": "□ + 3 = 4",
+            "answer": "1"
+        },
+        {
+            "id": 14,
+            "question": "1 + □ = 4",
+            "answer": "3"
+        },
+        {
+            "id": 15,
+            "question": "1 + 3 = □",
+            "answer": "4"
+        },
+        {
+            "id": 16,
+            "question": "□ = 1 + 3",
+            "answer": "4"
+        },
+        {
+            "id": 17,
+            "question": "4 = □ + 3",
+            "answer": "1"
+        },
+        {
+            "id": 18,
+            "question": "4 = 1 + □",
+            "answer": "3"
+        },
+        {
+            "id": 19,
+            "question": "□ + 4 = 5",
+            "answer": "1"
+        },
+        {
+            "id": 20,
+            "question": "1 + □ = 5",
+            "answer": "4"
+        },
+        {
+            "id": 21,
+            "question": "1 + 4 = □",
+            "answer": "5"
+        },
+        {
+            "id": 22,
+            "question": "□ = 1 + 4",
+            "answer": "5"
+        },
+        {
+            "id": 23,
+            "question": "5 = □ + 4",
+            "answer": "1"
+        },
+        {
+            "id": 24,
+            "question": "5 = 1 + □",
+            "answer": "4"
+        },
+        {
+            "id": 25,
+            "question": "□ + 5 = 6",
+            "answer": "1"
+        },
+        {
+            "id": 26,
+            "question": "1 + □ = 6",
+            "answer": "5"
+        },
+        {
+            "id": 27,
+            "question": "1 + 5 = □",
+            "answer": "6"
+        },
+        {
+            "id": 28,
+            "question": "□ = 1 + 5",
+            "answer": "6"
+        },
+        {
+            "id": 29,
+            "question": "6 = □ + 5",
+            "answer": "1"
+        },
+        {
+            "id": 30,
+            "question": "6 = 1 + □",
+            "answer": "5"
+        },
+        {
+            "id": 31,
+            "question": "□ + 6 = 7",
+            "answer": "1"
+        },
+        {
+            "id": 32,
+            "question": "1 + □ = 7",
+            "answer": "6"
+        },
+        {
+            "id": 33,
+            "question": "1 + 6 = □",
+            "answer": "7"
+        },
+        {
+            "id": 34,
+            "question": "□ = 1 + 6",
+            "answer": "7"
+        },
+        {
+            "id": 35,
+            "question": "7 = □ + 6",
+            "answer": "1"
+        },
+        {
+            "id": 36,
+            "question": "7 = 1 + □",
+            "answer": "6"
+        },
+        {
+            "id": 37,
+            "question": "□ + 7 = 8",
+            "answer": "1"
+        },
+        {
+            "id": 38,
+            "question": "1 + □ = 8",
+            "answer": "7"
+        },
+        {
+            "id": 39,
+            "question": "1 + 7 = □",
+            "answer": "8"
+        },
+        {
+            "id": 40,
+            "question": "□ = 1 + 7",
+            "answer": "8"
+        },
+        {
+            "id": 41,
+            "question": "8 = □ + 7",
+            "answer": "1"
+        },
+        {
+            "id": 42,
+            "question": "8 = 1 + □",
+            "answer": "7"
+        },
+        {
+            "id": 43,
+            "question": "□ + 8 = 9",
+            "answer": "1"
+        },
+        {
+            "id": 44,
+            "question": "1 + □ = 9",
+            "answer": "8"
+        },
+        {
+            "id": 45,
+            "question": "1 + 8 = □",
+            "answer": "9"
+        },
+        {
+            "id": 46,
+            "question": "□ = 1 + 8",
+            "answer": "9"
+        },
+        {
+            "id": 47,
+            "question": "9 = □ + 8",
+            "answer": "1"
+        },
+        {
+            "id": 48,
+            "question": "9 = 1 + □",
+            "answer": "8"
+        },
+        {
+            "id": 49,
+            "question": "□ + 9 = 10",
+            "answer": "1"
+        },
+        {
+            "id": 50,
+            "question": "1 + □ = 10",
+            "answer": "9"
+        },
+        {
+            "id": 51,
+            "question": "1 + 9 = □",
+            "answer": "10"
+        },
+        {
+            "id": 52,
+            "question": "□ = 1 + 9",
+            "answer": "10"
+        },
+        {
+            "id": 53,
+            "question": "10 = □ + 9",
+            "answer": "1"
+        },
+        {
+            "id": 54,
+            "question": "10 = 1 + □",
+            "answer": "9"
+        },
+        {
+            "id": 55,
+            "question": "□ + 1 = 3",
+            "answer": "2"
+        },
+        {
+            "id": 56,
+            "question": "2 + □ = 3",
+            "answer": "1"
+        },
+        {
+            "id": 57,
+            "question": "2 + 1 = □",
+            "answer": "3"
+        },
+        {
+            "id": 58,
+            "question": "□ = 2 + 1",
+            "answer": "3"
+        },
+        {
+            "id": 59,
+            "question": "3 = □ + 1",
+            "answer": "2"
+        },
+        {
+            "id": 60,
+            "question": "3 = 2 + □",
+            "answer": "1"
+        },
+        {
+            "id": 61,
+            "question": "□ + 2 = 4",
+            "answer": "2"
+        },
+        {
+            "id": 62,
+            "question": "2 + □ = 4",
+            "answer": "2"
+        },
+        {
+            "id": 63,
+            "question": "2 + 2 = □",
+            "answer": "4"
+        },
+        {
+            "id": 64,
+            "question": "□ = 2 + 2",
+            "answer": "4"
+        },
+        {
+            "id": 65,
+            "question": "4 = □ + 2",
+            "answer": "2"
+        },
+        {
+            "id": 66,
+            "question": "4 = 2 + □",
+            "answer": "2"
+        },
+        {
+            "id": 67,
+            "question": "□ + 3 = 5",
+            "answer": "2"
+        },
+        {
+            "id": 68,
+            "question": "2 + □ = 5",
+            "answer": "3"
+        },
+        {
+            "id": 69,
+            "question": "2 + 3 = □",
+            "answer": "5"
+        },
+        {
+            "id": 70,
+            "question": "□ = 2 + 3",
+            "answer": "5"
+        },
+        {
+            "id": 71,
+            "question": "5 = □ + 3",
+            "answer": "2"
+        },
+        {
+            "id": 72,
+            "question": "5 = 2 + □",
+            "answer": "3"
+        },
+        {
+            "id": 73,
+            "question": "□ + 4 = 6",
+            "answer": "2"
+        },
+        {
+            "id": 74,
+            "question": "2 + □ = 6",
+            "answer": "4"
+        },
+        {
+            "id": 75,
+            "question": "2 + 4 = □",
+            "answer": "6"
+        },
+        {
+            "id": 76,
+            "question": "□ = 2 + 4",
+            "answer": "6"
+        },
+        {
+            "id": 77,
+            "question": "6 = □ + 4",
+            "answer": "2"
+        },
+        {
+            "id": 78,
+            "question": "6 = 2 + □",
+            "answer": "4"
+        },
+        {
+            "id": 79,
+            "question": "□ + 5 = 7",
+            "answer": "2"
+        },
+        {
+            "id": 80,
+            "question": "2 + □ = 7",
+            "answer": "5"
+        },
+        {
+            "id": 81,
+            "question": "2 + 5 = □",
+            "answer": "7"
+        },
+        {
+            "id": 82,
+            "question": "□ = 2 + 5",
+            "answer": "7"
+        },
+        {
+            "id": 83,
+            "question": "7 = □ + 5",
+            "answer": "2"
+        },
+        {
+            "id": 84,
+            "question": "7 = 2 + □",
+            "answer": "5"
+        },
+        {
+            "id": 85,
+            "question": "□ + 6 = 8",
+            "answer": "2"
+        },
+        {
+            "id": 86,
+            "question": "2 + □ = 8",
+            "answer": "6"
+        },
+        {
+            "id": 87,
+            "question": "2 + 6 = □",
+            "answer": "8"
+        },
+        {
+            "id": 88,
+            "question": "□ = 2 + 6",
+            "answer": "8"
+        },
+        {
+            "id": 89,
+            "question": "8 = □ + 6",
+            "answer": "2"
+        },
+        {
+            "id": 90,
+            "question": "8 = 2 + □",
+            "answer": "6"
+        },
+        {
+            "id": 91,
+            "question": "□ + 7 = 9",
+            "answer": "2"
+        },
+        {
+            "id": 92,
+            "question": "2 + □ = 9",
+            "answer": "7"
+        },
+        {
+            "id": 93,
+            "question": "2 + 7 = □",
+            "answer": "9"
+        },
+        {
+            "id": 94,
+            "question": "□ = 2 + 7",
+            "answer": "9"
+        },
+        {
+            "id": 95,
+            "question": "9 = □ + 7",
+            "answer": "2"
+        },
+        {
+            "id": 96,
+            "question": "9 = 2 + □",
+            "answer": "7"
+        },
+        {
+            "id": 97,
+            "question": "□ + 8 = 10",
+            "answer": "2"
+        },
+        {
+            "id": 98,
+            "question": "2 + □ = 10",
+            "answer": "8"
+        },
+        {
+            "id": 99,
+            "question": "2 + 8 = □",
+            "answer": "10"
+        },
+        {
+            "id": 100,
+            "question": "□ = 2 + 8",
+            "answer": "10"
+        },
+        {
+            "id": 101,
+            "question": "10 = □ + 8",
+            "answer": "2"
+        },
+        {
+            "id": 102,
+            "question": "10 = 2 + □",
+            "answer": "8"
+        },
+        {
+            "id": 103,
+            "question": "□ + 9 = 11",
+            "answer": "2"
+        },
+        {
+            "id": 104,
+            "question": "2 + □ = 11",
+            "answer": "9"
+        },
+        {
+            "id": 105,
+            "question": "2 + 9 = □",
+            "answer": "11"
+        },
+        {
+            "id": 106,
+            "question": "□ = 2 + 9",
+            "answer": "11"
+        },
+        {
+            "id": 107,
+            "question": "11 = □ + 9",
+            "answer": "2"
+        },
+        {
+            "id": 108,
+            "question": "11 = 2 + □",
+            "answer": "9"
+        },
+        {
+            "id": 109,
+            "question": "□ + 1 = 4",
+            "answer": "3"
+        },
+        {
+            "id": 110,
+            "question": "3 + □ = 4",
+            "answer": "1"
+        },
+        {
+            "id": 111,
+            "question": "3 + 1 = □",
+            "answer": "4"
+        },
+        {
+            "id": 112,
+            "question": "□ = 3 + 1",
+            "answer": "4"
+        },
+        {
+            "id": 113,
+            "question": "4 = □ + 1",
+            "answer": "3"
+        },
+        {
+            "id": 114,
+            "question": "4 = 3 + □",
+            "answer": "1"
+        },
+        {
+            "id": 115,
+            "question": "□ + 2 = 5",
+            "answer": "3"
+        },
+        {
+            "id": 116,
+            "question": "3 + □ = 5",
+            "answer": "2"
+        },
+        {
+            "id": 117,
+            "question": "3 + 2 = □",
+            "answer": "5"
+        },
+        {
+            "id": 118,
+            "question": "□ = 3 + 2",
+            "answer": "5"
+        },
+        {
+            "id": 119,
+            "question": "5 = □ + 2",
+            "answer": "3"
+        },
+        {
+            "id": 120,
+            "question": "5 = 3 + □",
+            "answer": "2"
+        },
+        {
+            "id": 121,
+            "question": "□ + 3 = 6",
+            "answer": "3"
+        },
+        {
+            "id": 122,
+            "question": "3 + □ = 6",
+            "answer": "3"
+        },
+        {
+            "id": 123,
+            "question": "3 + 3 = □",
+            "answer": "6"
+        },
+        {
+            "id": 124,
+            "question": "□ = 3 + 3",
+            "answer": "6"
+        },
+        {
+            "id": 125,
+            "question": "6 = □ + 3",
+            "answer": "3"
+        },
+        {
+            "id": 126,
+            "question": "6 = 3 + □",
+            "answer": "3"
+        },
+        {
+            "id": 127,
+            "question": "□ + 4 = 7",
+            "answer": "3"
+        },
+        {
+            "id": 128,
+            "question": "3 + □ = 7",
+            "answer": "4"
+        },
+        {
+            "id": 129,
+            "question": "3 + 4 = □",
+            "answer": "7"
+        },
+        {
+            "id": 130,
+            "question": "□ = 3 + 4",
+            "answer": "7"
+        },
+        {
+            "id": 131,
+            "question": "7 = □ + 4",
+            "answer": "3"
+        },
+        {
+            "id": 132,
+            "question": "7 = 3 + □",
+            "answer": "4"
+        },
+        {
+            "id": 133,
+            "question": "□ + 5 = 8",
+            "answer": "3"
+        },
+        {
+            "id": 134,
+            "question": "3 + □ = 8",
+            "answer": "5"
+        },
+        {
+            "id": 135,
+            "question": "3 + 5 = □",
+            "answer": "8"
+        },
+        {
+            "id": 136,
+            "question": "□ = 3 + 5",
+            "answer": "8"
+        },
+        {
+            "id": 137,
+            "question": "8 = □ + 5",
+            "answer": "3"
+        },
+        {
+            "id": 138,
+            "question": "8 = 3 + □",
+            "answer": "5"
+        },
+        {
+            "id": 139,
+            "question": "□ + 6 = 9",
+            "answer": "3"
+        },
+        {
+            "id": 140,
+            "question": "3 + □ = 9",
+            "answer": "6"
+        },
+        {
+            "id": 141,
+            "question": "3 + 6 = □",
+            "answer": "9"
+        },
+        {
+            "id": 142,
+            "question": "□ = 3 + 6",
+            "answer": "9"
+        },
+        {
+            "id": 143,
+            "question": "9 = □ + 6",
+            "answer": "3"
+        },
+        {
+            "id": 144,
+            "question": "9 = 3 + □",
+            "answer": "6"
+        },
+        {
+            "id": 145,
+            "question": "□ + 7 = 10",
+            "answer": "3"
+        },
+        {
+            "id": 146,
+            "question": "3 + □ = 10",
+            "answer": "7"
+        },
+        {
+            "id": 147,
+            "question": "3 + 7 = □",
+            "answer": "10"
+        },
+        {
+            "id": 148,
+            "question": "□ = 3 + 7",
+            "answer": "10"
+        },
+        {
+            "id": 149,
+            "question": "10 = □ + 7",
+            "answer": "3"
+        },
+        {
+            "id": 150,
+            "question": "10 = 3 + □",
+            "answer": "7"
+        },
+        {
+            "id": 151,
+            "question": "□ + 8 = 11",
+            "answer": "3"
+        },
+        {
+            "id": 152,
+            "question": "3 + □ = 11",
+            "answer": "8"
+        },
+        {
+            "id": 153,
+            "question": "3 + 8 = □",
+            "answer": "11"
+        },
+        {
+            "id": 154,
+            "question": "□ = 3 + 8",
+            "answer": "11"
+        },
+        {
+            "id": 155,
+            "question": "11 = □ + 8",
+            "answer": "3"
+        },
+        {
+            "id": 156,
+            "question": "11 = 3 + □",
+            "answer": "8"
+        },
+        {
+            "id": 157,
+            "question": "□ + 9 = 12",
+            "answer": "3"
+        },
+        {
+            "id": 158,
+            "question": "3 + □ = 12",
+            "answer": "9"
+        },
+        {
+            "id": 159,
+            "question": "3 + 9 = □",
+            "answer": "12"
+        },
+        {
+            "id": 160,
+            "question": "□ = 3 + 9",
+            "answer": "12"
+        },
+        {
+            "id": 161,
+            "question": "12 = □ + 9",
+            "answer": "3"
+        },
+        {
+            "id": 162,
+            "question": "12 = 3 + □",
+            "answer": "9"
+        },
+        {
+            "id": 163,
+            "question": "□ + 1 = 5",
+            "answer": "4"
+        },
+        {
+            "id": 164,
+            "question": "4 + □ = 5",
+            "answer": "1"
+        },
+        {
+            "id": 165,
+            "question": "4 + 1 = □",
+            "answer": "5"
+        },
+        {
+            "id": 166,
+            "question": "□ = 4 + 1",
+            "answer": "5"
+        },
+        {
+            "id": 167,
+            "question": "5 = □ + 1",
+            "answer": "4"
+        },
+        {
+            "id": 168,
+            "question": "5 = 4 + □",
+            "answer": "1"
+        },
+        {
+            "id": 169,
+            "question": "□ + 2 = 6",
+            "answer": "4"
+        },
+        {
+            "id": 170,
+            "question": "4 + □ = 6",
+            "answer": "2"
+        },
+        {
+            "id": 171,
+            "question": "4 + 2 = □",
+            "answer": "6"
+        },
+        {
+            "id": 172,
+            "question": "□ = 4 + 2",
+            "answer": "6"
+        },
+        {
+            "id": 173,
+            "question": "6 = □ + 2",
+            "answer": "4"
+        },
+        {
+            "id": 174,
+            "question": "6 = 4 + □",
+            "answer": "2"
+        },
+        {
+            "id": 175,
+            "question": "□ + 3 = 7",
+            "answer": "4"
+        },
+        {
+            "id": 176,
+            "question": "4 + □ = 7",
+            "answer": "3"
+        },
+        {
+            "id": 177,
+            "question": "4 + 3 = □",
+            "answer": "7"
+        },
+        {
+            "id": 178,
+            "question": "□ = 4 + 3",
+            "answer": "7"
+        },
+        {
+            "id": 179,
+            "question": "7 = □ + 3",
+            "answer": "4"
+        },
+        {
+            "id": 180,
+            "question": "7 = 4 + □",
+            "answer": "3"
+        },
+        {
+            "id": 181,
+            "question": "□ + 4 = 8",
+            "answer": "4"
+        },
+        {
+            "id": 182,
+            "question": "4 + □ = 8",
+            "answer": "4"
+        },
+        {
+            "id": 183,
+            "question": "4 + 4 = □",
+            "answer": "8"
+        },
+        {
+            "id": 184,
+            "question": "□ = 4 + 4",
+            "answer": "8"
+        },
+        {
+            "id": 185,
+            "question": "8 = □ + 4",
+            "answer": "4"
+        },
+        {
+            "id": 186,
+            "question": "8 = 4 + □",
+            "answer": "4"
+        },
+        {
+            "id": 187,
+            "question": "□ + 5 = 9",
+            "answer": "4"
+        },
+        {
+            "id": 188,
+            "question": "4 + □ = 9",
+            "answer": "5"
+        },
+        {
+            "id": 189,
+            "question": "4 + 5 = □",
+            "answer": "9"
+        },
+        {
+            "id": 190,
+            "question": "□ = 4 + 5",
+            "answer": "9"
+        },
+        {
+            "id": 191,
+            "question": "9 = □ + 5",
+            "answer": "4"
+        },
+        {
+            "id": 192,
+            "question": "9 = 4 + □",
+            "answer": "5"
+        },
+        {
+            "id": 193,
+            "question": "□ + 6 = 10",
+            "answer": "4"
+        },
+        {
+            "id": 194,
+            "question": "4 + □ = 10",
+            "answer": "6"
+        },
+        {
+            "id": 195,
+            "question": "4 + 6 = □",
+            "answer": "10"
+        },
+        {
+            "id": 196,
+            "question": "□ = 4 + 6",
+            "answer": "10"
+        },
+        {
+            "id": 197,
+            "question": "10 = □ + 6",
+            "answer": "4"
+        },
+        {
+            "id": 198,
+            "question": "10 = 4 + □",
+            "answer": "6"
+        },
+        {
+            "id": 199,
+            "question": "□ + 7 = 11",
+            "answer": "4"
+        },
+        {
+            "id": 200,
+            "question": "4 + □ = 11",
+            "answer": "7"
+        },
+        {
+            "id": 201,
+            "question": "4 + 7 = □",
+            "answer": "11"
+        },
+        {
+            "id": 202,
+            "question": "□ = 4 + 7",
+            "answer": "11"
+        },
+        {
+            "id": 203,
+            "question": "11 = □ + 7",
+            "answer": "4"
+        },
+        {
+            "id": 204,
+            "question": "11 = 4 + □",
+            "answer": "7"
+        },
+        {
+            "id": 205,
+            "question": "□ + 8 = 12",
+            "answer": "4"
+        },
+        {
+            "id": 206,
+            "question": "4 + □ = 12",
+            "answer": "8"
+        },
+        {
+            "id": 207,
+            "question": "4 + 8 = □",
+            "answer": "12"
+        },
+        {
+            "id": 208,
+            "question": "□ = 4 + 8",
+            "answer": "12"
+        },
+        {
+            "id": 209,
+            "question": "12 = □ + 8",
+            "answer": "4"
+        },
+        {
+            "id": 210,
+            "question": "12 = 4 + □",
+            "answer": "8"
+        },
+        {
+            "id": 211,
+            "question": "□ + 9 = 13",
+            "answer": "4"
+        },
+        {
+            "id": 212,
+            "question": "4 + □ = 13",
+            "answer": "9"
+        },
+        {
+            "id": 213,
+            "question": "4 + 9 = □",
+            "answer": "13"
+        },
+        {
+            "id": 214,
+            "question": "□ = 4 + 9",
+            "answer": "13"
+        },
+        {
+            "id": 215,
+            "question": "13 = □ + 9",
+            "answer": "4"
+        },
+        {
+            "id": 216,
+            "question": "13 = 4 + □",
+            "answer": "9"
+        },
+        {
+            "id": 217,
+            "question": "□ + 1 = 6",
+            "answer": "5"
+        },
+        {
+            "id": 218,
+            "question": "5 + □ = 6",
+            "answer": "1"
+        },
+        {
+            "id": 219,
+            "question": "5 + 1 = □",
+            "answer": "6"
+        },
+        {
+            "id": 220,
+            "question": "□ = 5 + 1",
+            "answer": "6"
+        },
+        {
+            "id": 221,
+            "question": "6 = □ + 1",
+            "answer": "5"
+        },
+        {
+            "id": 222,
+            "question": "6 = 5 + □",
+            "answer": "1"
+        },
+        {
+            "id": 223,
+            "question": "□ + 2 = 7",
+            "answer": "5"
+        },
+        {
+            "id": 224,
+            "question": "5 + □ = 7",
+            "answer": "2"
+        },
+        {
+            "id": 225,
+            "question": "5 + 2 = □",
+            "answer": "7"
+        },
+        {
+            "id": 226,
+            "question": "□ = 5 + 2",
+            "answer": "7"
+        },
+        {
+            "id": 227,
+            "question": "7 = □ + 2",
+            "answer": "5"
+        },
+        {
+            "id": 228,
+            "question": "7 = 5 + □",
+            "answer": "2"
+        },
+        {
+            "id": 229,
+            "question": "□ + 3 = 8",
+            "answer": "5"
+        },
+        {
+            "id": 230,
+            "question": "5 + □ = 8",
+            "answer": "3"
+        },
+        {
+            "id": 231,
+            "question": "5 + 3 = □",
+            "answer": "8"
+        },
+        {
+            "id": 232,
+            "question": "□ = 5 + 3",
+            "answer": "8"
+        },
+        {
+            "id": 233,
+            "question": "8 = □ + 3",
+            "answer": "5"
+        },
+        {
+            "id": 234,
+            "question": "8 = 5 + □",
+            "answer": "3"
+        },
+        {
+            "id": 235,
+            "question": "□ + 4 = 9",
+            "answer": "5"
+        },
+        {
+            "id": 236,
+            "question": "5 + □ = 9",
+            "answer": "4"
+        },
+        {
+            "id": 237,
+            "question": "5 + 4 = □",
+            "answer": "9"
+        },
+        {
+            "id": 238,
+            "question": "□ = 5 + 4",
+            "answer": "9"
+        },
+        {
+            "id": 239,
+            "question": "9 = □ + 4",
+            "answer": "5"
+        },
+        {
+            "id": 240,
+            "question": "9 = 5 + □",
+            "answer": "4"
+        },
+        {
+            "id": 241,
+            "question": "□ + 5 = 10",
+            "answer": "5"
+        },
+        {
+            "id": 242,
+            "question": "5 + □ = 10",
+            "answer": "5"
+        },
+        {
+            "id": 243,
+            "question": "5 + 5 = □",
+            "answer": "10"
+        },
+        {
+            "id": 244,
+            "question": "□ = 5 + 5",
+            "answer": "10"
+        },
+        {
+            "id": 245,
+            "question": "10 = □ + 5",
+            "answer": "5"
+        },
+        {
+            "id": 246,
+            "question": "10 = 5 + □",
+            "answer": "5"
+        },
+        {
+            "id": 247,
+            "question": "□ + 6 = 11",
+            "answer": "5"
+        },
+        {
+            "id": 248,
+            "question": "5 + □ = 11",
+            "answer": "6"
+        },
+        {
+            "id": 249,
+            "question": "5 + 6 = □",
+            "answer": "11"
+        },
+        {
+            "id": 250,
+            "question": "□ = 5 + 6",
+            "answer": "11"
+        },
+        {
+            "id": 251,
+            "question": "11 = □ + 6",
+            "answer": "5"
+        },
+        {
+            "id": 252,
+            "question": "11 = 5 + □",
+            "answer": "6"
+        },
+        {
+            "id": 253,
+            "question": "□ + 7 = 12",
+            "answer": "5"
+        },
+        {
+            "id": 254,
+            "question": "5 + □ = 12",
+            "answer": "7"
+        },
+        {
+            "id": 255,
+            "question": "5 + 7 = □",
+            "answer": "12"
+        },
+        {
+            "id": 256,
+            "question": "□ = 5 + 7",
+            "answer": "12"
+        },
+        {
+            "id": 257,
+            "question": "12 = □ + 7",
+            "answer": "5"
+        },
+        {
+            "id": 258,
+            "question": "12 = 5 + □",
+            "answer": "7"
+        },
+        {
+            "id": 259,
+            "question": "□ + 8 = 13",
+            "answer": "5"
+        },
+        {
+            "id": 260,
+            "question": "5 + □ = 13",
+            "answer": "8"
+        },
+        {
+            "id": 261,
+            "question": "5 + 8 = □",
+            "answer": "13"
+        },
+        {
+            "id": 262,
+            "question": "□ = 5 + 8",
+            "answer": "13"
+        },
+        {
+            "id": 263,
+            "question": "13 = □ + 8",
+            "answer": "5"
+        },
+        {
+            "id": 264,
+            "question": "13 = 5 + □",
+            "answer": "8"
+        },
+        {
+            "id": 265,
+            "question": "□ + 9 = 14",
+            "answer": "5"
+        },
+        {
+            "id": 266,
+            "question": "5 + □ = 14",
+            "answer": "9"
+        },
+        {
+            "id": 267,
+            "question": "5 + 9 = □",
+            "answer": "14"
+        },
+        {
+            "id": 268,
+            "question": "□ = 5 + 9",
+            "answer": "14"
+        },
+        {
+            "id": 269,
+            "question": "14 = □ + 9",
+            "answer": "5"
+        },
+        {
+            "id": 270,
+            "question": "14 = 5 + □",
+            "answer": "9"
+        },
+        {
+            "id": 271,
+            "question": "□ + 1 = 7",
+            "answer": "6"
+        },
+        {
+            "id": 272,
+            "question": "6 + □ = 7",
+            "answer": "1"
+        },
+        {
+            "id": 273,
+            "question": "6 + 1 = □",
+            "answer": "7"
+        },
+        {
+            "id": 274,
+            "question": "□ = 6 + 1",
+            "answer": "7"
+        },
+        {
+            "id": 275,
+            "question": "7 = □ + 1",
+            "answer": "6"
+        },
+        {
+            "id": 276,
+            "question": "7 = 6 + □",
+            "answer": "1"
+        },
+        {
+            "id": 277,
+            "question": "□ + 2 = 8",
+            "answer": "6"
+        },
+        {
+            "id": 278,
+            "question": "6 + □ = 8",
+            "answer": "2"
+        },
+        {
+            "id": 279,
+            "question": "6 + 2 = □",
+            "answer": "8"
+        },
+        {
+            "id": 280,
+            "question": "□ = 6 + 2",
+            "answer": "8"
+        },
+        {
+            "id": 281,
+            "question": "8 = □ + 2",
+            "answer": "6"
+        },
+        {
+            "id": 282,
+            "question": "8 = 6 + □",
+            "answer": "2"
+        },
+        {
+            "id": 283,
+            "question": "□ + 3 = 9",
+            "answer": "6"
+        },
+        {
+            "id": 284,
+            "question": "6 + □ = 9",
+            "answer": "3"
+        },
+        {
+            "id": 285,
+            "question": "6 + 3 = □",
+            "answer": "9"
+        },
+        {
+            "id": 286,
+            "question": "□ = 6 + 3",
+            "answer": "9"
+        },
+        {
+            "id": 287,
+            "question": "9 = □ + 3",
+            "answer": "6"
+        },
+        {
+            "id": 288,
+            "question": "9 = 6 + □",
+            "answer": "3"
+        },
+        {
+            "id": 289,
+            "question": "□ + 4 = 10",
+            "answer": "6"
+        },
+        {
+            "id": 290,
+            "question": "6 + □ = 10",
+            "answer": "4"
+        },
+        {
+            "id": 291,
+            "question": "6 + 4 = □",
+            "answer": "10"
+        },
+        {
+            "id": 292,
+            "question": "□ = 6 + 4",
+            "answer": "10"
+        },
+        {
+            "id": 293,
+            "question": "10 = □ + 4",
+            "answer": "6"
+        },
+        {
+            "id": 294,
+            "question": "10 = 6 + □",
+            "answer": "4"
+        },
+        {
+            "id": 295,
+            "question": "□ + 5 = 11",
+            "answer": "6"
+        },
+        {
+            "id": 296,
+            "question": "6 + □ = 11",
+            "answer": "5"
+        },
+        {
+            "id": 297,
+            "question": "6 + 5 = □",
+            "answer": "11"
+        },
+        {
+            "id": 298,
+            "question": "□ = 6 + 5",
+            "answer": "11"
+        },
+        {
+            "id": 299,
+            "question": "11 = □ + 5",
+            "answer": "6"
+        },
+        {
+            "id": 300,
+            "question": "11 = 6 + □",
+            "answer": "5"
+        },
+        {
+            "id": 301,
+            "question": "□ + 6 = 12",
+            "answer": "6"
+        },
+        {
+            "id": 302,
+            "question": "6 + □ = 12",
+            "answer": "6"
+        },
+        {
+            "id": 303,
+            "question": "6 + 6 = □",
+            "answer": "12"
+        },
+        {
+            "id": 304,
+            "question": "□ = 6 + 6",
+            "answer": "12"
+        },
+        {
+            "id": 305,
+            "question": "12 = □ + 6",
+            "answer": "6"
+        },
+        {
+            "id": 306,
+            "question": "12 = 6 + □",
+            "answer": "6"
+        },
+        {
+            "id": 307,
+            "question": "□ + 7 = 13",
+            "answer": "6"
+        },
+        {
+            "id": 308,
+            "question": "6 + □ = 13",
+            "answer": "7"
+        },
+        {
+            "id": 309,
+            "question": "6 + 7 = □",
+            "answer": "13"
+        },
+        {
+            "id": 310,
+            "question": "□ = 6 + 7",
+            "answer": "13"
+        },
+        {
+            "id": 311,
+            "question": "13 = □ + 7",
+            "answer": "6"
+        },
+        {
+            "id": 312,
+            "question": "13 = 6 + □",
+            "answer": "7"
+        },
+        {
+            "id": 313,
+            "question": "□ + 8 = 14",
+            "answer": "6"
+        },
+        {
+            "id": 314,
+            "question": "6 + □ = 14",
+            "answer": "8"
+        },
+        {
+            "id": 315,
+            "question": "6 + 8 = □",
+            "answer": "14"
+        },
+        {
+            "id": 316,
+            "question": "□ = 6 + 8",
+            "answer": "14"
+        },
+        {
+            "id": 317,
+            "question": "14 = □ + 8",
+            "answer": "6"
+        },
+        {
+            "id": 318,
+            "question": "14 = 6 + □",
+            "answer": "8"
+        },
+        {
+            "id": 319,
+            "question": "□ + 9 = 15",
+            "answer": "6"
+        },
+        {
+            "id": 320,
+            "question": "6 + □ = 15",
+            "answer": "9"
+        },
+        {
+            "id": 321,
+            "question": "6 + 9 = □",
+            "answer": "15"
+        },
+        {
+            "id": 322,
+            "question": "□ = 6 + 9",
+            "answer": "15"
+        },
+        {
+            "id": 323,
+            "question": "15 = □ + 9",
+            "answer": "6"
+        },
+        {
+            "id": 324,
+            "question": "15 = 6 + □",
+            "answer": "9"
+        },
+        {
+            "id": 325,
+            "question": "□ + 1 = 8",
+            "answer": "7"
+        },
+        {
+            "id": 326,
+            "question": "7 + □ = 8",
+            "answer": "1"
+        },
+        {
+            "id": 327,
+            "question": "7 + 1 = □",
+            "answer": "8"
+        },
+        {
+            "id": 328,
+            "question": "□ = 7 + 1",
+            "answer": "8"
+        },
+        {
+            "id": 329,
+            "question": "8 = □ + 1",
+            "answer": "7"
+        },
+        {
+            "id": 330,
+            "question": "8 = 7 + □",
+            "answer": "1"
+        },
+        {
+            "id": 331,
+            "question": "□ + 2 = 9",
+            "answer": "7"
+        },
+        {
+            "id": 332,
+            "question": "7 + □ = 9",
+            "answer": "2"
+        },
+        {
+            "id": 333,
+            "question": "7 + 2 = □",
+            "answer": "9"
+        },
+        {
+            "id": 334,
+            "question": "□ = 7 + 2",
+            "answer": "9"
+        },
+        {
+            "id": 335,
+            "question": "9 = □ + 2",
+            "answer": "7"
+        },
+        {
+            "id": 336,
+            "question": "9 = 7 + □",
+            "answer": "2"
+        },
+        {
+            "id": 337,
+            "question": "□ + 3 = 10",
+            "answer": "7"
+        },
+        {
+            "id": 338,
+            "question": "7 + □ = 10",
+            "answer": "3"
+        },
+        {
+            "id": 339,
+            "question": "7 + 3 = □",
+            "answer": "10"
+        },
+        {
+            "id": 340,
+            "question": "□ = 7 + 3",
+            "answer": "10"
+        },
+        {
+            "id": 341,
+            "question": "10 = □ + 3",
+            "answer": "7"
+        },
+        {
+            "id": 342,
+            "question": "10 = 7 + □",
+            "answer": "3"
+        },
+        {
+            "id": 343,
+            "question": "□ + 4 = 11",
+            "answer": "7"
+        },
+        {
+            "id": 344,
+            "question": "7 + □ = 11",
+            "answer": "4"
+        },
+        {
+            "id": 345,
+            "question": "7 + 4 = □",
+            "answer": "11"
+        },
+        {
+            "id": 346,
+            "question": "□ = 7 + 4",
+            "answer": "11"
+        },
+        {
+            "id": 347,
+            "question": "11 = □ + 4",
+            "answer": "7"
+        },
+        {
+            "id": 348,
+            "question": "11 = 7 + □",
+            "answer": "4"
+        },
+        {
+            "id": 349,
+            "question": "□ + 5 = 12",
+            "answer": "7"
+        },
+        {
+            "id": 350,
+            "question": "7 + □ = 12",
+            "answer": "5"
+        },
+        {
+            "id": 351,
+            "question": "7 + 5 = □",
+            "answer": "12"
+        },
+        {
+            "id": 352,
+            "question": "□ = 7 + 5",
+            "answer": "12"
+        },
+        {
+            "id": 353,
+            "question": "12 = □ + 5",
+            "answer": "7"
+        },
+        {
+            "id": 354,
+            "question": "12 = 7 + □",
+            "answer": "5"
+        },
+        {
+            "id": 355,
+            "question": "□ + 6 = 13",
+            "answer": "7"
+        },
+        {
+            "id": 356,
+            "question": "7 + □ = 13",
+            "answer": "6"
+        },
+        {
+            "id": 357,
+            "question": "7 + 6 = □",
+            "answer": "13"
+        },
+        {
+            "id": 358,
+            "question": "□ = 7 + 6",
+            "answer": "13"
+        },
+        {
+            "id": 359,
+            "question": "13 = □ + 6",
+            "answer": "7"
+        },
+        {
+            "id": 360,
+            "question": "13 = 7 + □",
+            "answer": "6"
+        },
+        {
+            "id": 361,
+            "question": "□ + 7 = 14",
+            "answer": "7"
+        },
+        {
+            "id": 362,
+            "question": "7 + □ = 14",
+            "answer": "7"
+        },
+        {
+            "id": 363,
+            "question": "7 + 7 = □",
+            "answer": "14"
+        },
+        {
+            "id": 364,
+            "question": "□ = 7 + 7",
+            "answer": "14"
+        },
+        {
+            "id": 365,
+            "question": "14 = □ + 7",
+            "answer": "7"
+        },
+        {
+            "id": 366,
+            "question": "14 = 7 + □",
+            "answer": "7"
+        },
+        {
+            "id": 367,
+            "question": "□ + 8 = 15",
+            "answer": "7"
+        },
+        {
+            "id": 368,
+            "question": "7 + □ = 15",
+            "answer": "8"
+        },
+        {
+            "id": 369,
+            "question": "7 + 8 = □",
+            "answer": "15"
+        },
+        {
+            "id": 370,
+            "question": "□ = 7 + 8",
+            "answer": "15"
+        },
+        {
+            "id": 371,
+            "question": "15 = □ + 8",
+            "answer": "7"
+        },
+        {
+            "id": 372,
+            "question": "15 = 7 + □",
+            "answer": "8"
+        },
+        {
+            "id": 373,
+            "question": "□ + 9 = 16",
+            "answer": "7"
+        },
+        {
+            "id": 374,
+            "question": "7 + □ = 16",
+            "answer": "9"
+        },
+        {
+            "id": 375,
+            "question": "7 + 9 = □",
+            "answer": "16"
+        },
+        {
+            "id": 376,
+            "question": "□ = 7 + 9",
+            "answer": "16"
+        },
+        {
+            "id": 377,
+            "question": "16 = □ + 9",
+            "answer": "7"
+        },
+        {
+            "id": 378,
+            "question": "16 = 7 + □",
+            "answer": "9"
+        },
+        {
+            "id": 379,
+            "question": "□ + 1 = 9",
+            "answer": "8"
+        },
+        {
+            "id": 380,
+            "question": "8 + □ = 9",
+            "answer": "1"
+        },
+        {
+            "id": 381,
+            "question": "8 + 1 = □",
+            "answer": "9"
+        },
+        {
+            "id": 382,
+            "question": "□ = 8 + 1",
+            "answer": "9"
+        },
+        {
+            "id": 383,
+            "question": "9 = □ + 1",
+            "answer": "8"
+        },
+        {
+            "id": 384,
+            "question": "9 = 8 + □",
+            "answer": "1"
+        },
+        {
+            "id": 385,
+            "question": "□ + 2 = 10",
+            "answer": "8"
+        },
+        {
+            "id": 386,
+            "question": "8 + □ = 10",
+            "answer": "2"
+        },
+        {
+            "id": 387,
+            "question": "8 + 2 = □",
+            "answer": "10"
+        },
+        {
+            "id": 388,
+            "question": "□ = 8 + 2",
+            "answer": "10"
+        },
+        {
+            "id": 389,
+            "question": "10 = □ + 2",
+            "answer": "8"
+        },
+        {
+            "id": 390,
+            "question": "10 = 8 + □",
+            "answer": "2"
+        },
+        {
+            "id": 391,
+            "question": "□ + 3 = 11",
+            "answer": "8"
+        },
+        {
+            "id": 392,
+            "question": "8 + □ = 11",
+            "answer": "3"
+        },
+        {
+            "id": 393,
+            "question": "8 + 3 = □",
+            "answer": "11"
+        },
+        {
+            "id": 394,
+            "question": "□ = 8 + 3",
+            "answer": "11"
+        },
+        {
+            "id": 395,
+            "question": "11 = □ + 3",
+            "answer": "8"
+        },
+        {
+            "id": 396,
+            "question": "11 = 8 + □",
+            "answer": "3"
+        },
+        {
+            "id": 397,
+            "question": "□ + 4 = 12",
+            "answer": "8"
+        },
+        {
+            "id": 398,
+            "question": "8 + □ = 12",
+            "answer": "4"
+        },
+        {
+            "id": 399,
+            "question": "8 + 4 = □",
+            "answer": "12"
+        },
+        {
+            "id": 400,
+            "question": "□ = 8 + 4",
+            "answer": "12"
+        },
+        {
+            "id": 401,
+            "question": "12 = □ + 4",
+            "answer": "8"
+        },
+        {
+            "id": 402,
+            "question": "12 = 8 + □",
+            "answer": "4"
+        },
+        {
+            "id": 403,
+            "question": "□ + 5 = 13",
+            "answer": "8"
+        },
+        {
+            "id": 404,
+            "question": "8 + □ = 13",
+            "answer": "5"
+        },
+        {
+            "id": 405,
+            "question": "8 + 5 = □",
+            "answer": "13"
+        },
+        {
+            "id": 406,
+            "question": "□ = 8 + 5",
+            "answer": "13"
+        },
+        {
+            "id": 407,
+            "question": "13 = □ + 5",
+            "answer": "8"
+        },
+        {
+            "id": 408,
+            "question": "13 = 8 + □",
+            "answer": "5"
+        },
+        {
+            "id": 409,
+            "question": "□ + 6 = 14",
+            "answer": "8"
+        },
+        {
+            "id": 410,
+            "question": "8 + □ = 14",
+            "answer": "6"
+        },
+        {
+            "id": 411,
+            "question": "8 + 6 = □",
+            "answer": "14"
+        },
+        {
+            "id": 412,
+            "question": "□ = 8 + 6",
+            "answer": "14"
+        },
+        {
+            "id": 413,
+            "question": "14 = □ + 6",
+            "answer": "8"
+        },
+        {
+            "id": 414,
+            "question": "14 = 8 + □",
+            "answer": "6"
+        },
+        {
+            "id": 415,
+            "question": "□ + 7 = 15",
+            "answer": "8"
+        },
+        {
+            "id": 416,
+            "question": "8 + □ = 15",
+            "answer": "7"
+        },
+        {
+            "id": 417,
+            "question": "8 + 7 = □",
+            "answer": "15"
+        },
+        {
+            "id": 418,
+            "question": "□ = 8 + 7",
+            "answer": "15"
+        },
+        {
+            "id": 419,
+            "question": "15 = □ + 7",
+            "answer": "8"
+        },
+        {
+            "id": 420,
+            "question": "15 = 8 + □",
+            "answer": "7"
+        },
+        {
+            "id": 421,
+            "question": "□ + 8 = 16",
+            "answer": "8"
+        },
+        {
+            "id": 422,
+            "question": "8 + □ = 16",
+            "answer": "8"
+        },
+        {
+            "id": 423,
+            "question": "8 + 8 = □",
+            "answer": "16"
+        },
+        {
+            "id": 424,
+            "question": "□ = 8 + 8",
+            "answer": "16"
+        },
+        {
+            "id": 425,
+            "question": "16 = □ + 8",
+            "answer": "8"
+        },
+        {
+            "id": 426,
+            "question": "16 = 8 + □",
+            "answer": "8"
+        },
+        {
+            "id": 427,
+            "question": "□ + 9 = 17",
+            "answer": "8"
+        },
+        {
+            "id": 428,
+            "question": "8 + □ = 17",
+            "answer": "9"
+        },
+        {
+            "id": 429,
+            "question": "8 + 9 = □",
+            "answer": "17"
+        },
+        {
+            "id": 430,
+            "question": "□ = 8 + 9",
+            "answer": "17"
+        },
+        {
+            "id": 431,
+            "question": "17 = □ + 9",
+            "answer": "8"
+        },
+        {
+            "id": 432,
+            "question": "17 = 8 + □",
+            "answer": "9"
+        },
+        {
+            "id": 433,
+            "question": "□ + 1 = 10",
+            "answer": "9"
+        },
+        {
+            "id": 434,
+            "question": "9 + □ = 10",
+            "answer": "1"
+        },
+        {
+            "id": 435,
+            "question": "9 + 1 = □",
+            "answer": "10"
+        },
+        {
+            "id": 436,
+            "question": "□ = 9 + 1",
+            "answer": "10"
+        },
+        {
+            "id": 437,
+            "question": "10 = □ + 1",
+            "answer": "9"
+        },
+        {
+            "id": 438,
+            "question": "10 = 9 + □",
+            "answer": "1"
+        },
+        {
+            "id": 439,
+            "question": "□ + 2 = 11",
+            "answer": "9"
+        },
+        {
+            "id": 440,
+            "question": "9 + □ = 11",
+            "answer": "2"
+        },
+        {
+            "id": 441,
+            "question": "9 + 2 = □",
+            "answer": "11"
+        },
+        {
+            "id": 442,
+            "question": "□ = 9 + 2",
+            "answer": "11"
+        },
+        {
+            "id": 443,
+            "question": "11 = □ + 2",
+            "answer": "9"
+        },
+        {
+            "id": 444,
+            "question": "11 = 9 + □",
+            "answer": "2"
+        },
+        {
+            "id": 445,
+            "question": "□ + 3 = 12",
+            "answer": "9"
+        },
+        {
+            "id": 446,
+            "question": "9 + □ = 12",
+            "answer": "3"
+        },
+        {
+            "id": 447,
+            "question": "9 + 3 = □",
+            "answer": "12"
+        },
+        {
+            "id": 448,
+            "question": "□ = 9 + 3",
+            "answer": "12"
+        },
+        {
+            "id": 449,
+            "question": "12 = □ + 3",
+            "answer": "9"
+        },
+        {
+            "id": 450,
+            "question": "12 = 9 + □",
+            "answer": "3"
+        },
+        {
+            "id": 451,
+            "question": "□ + 4 = 13",
+            "answer": "9"
+        },
+        {
+            "id": 452,
+            "question": "9 + □ = 13",
+            "answer": "4"
+        },
+        {
+            "id": 453,
+            "question": "9 + 4 = □",
+            "answer": "13"
+        },
+        {
+            "id": 454,
+            "question": "□ = 9 + 4",
+            "answer": "13"
+        },
+        {
+            "id": 455,
+            "question": "13 = □ + 4",
+            "answer": "9"
+        },
+        {
+            "id": 456,
+            "question": "13 = 9 + □",
+            "answer": "4"
+        },
+        {
+            "id": 457,
+            "question": "□ + 5 = 14",
+            "answer": "9"
+        },
+        {
+            "id": 458,
+            "question": "9 + □ = 14",
+            "answer": "5"
+        },
+        {
+            "id": 459,
+            "question": "9 + 5 = □",
+            "answer": "14"
+        },
+        {
+            "id": 460,
+            "question": "□ = 9 + 5",
+            "answer": "14"
+        },
+        {
+            "id": 461,
+            "question": "14 = □ + 5",
+            "answer": "9"
+        },
+        {
+            "id": 462,
+            "question": "14 = 9 + □",
+            "answer": "5"
+        },
+        {
+            "id": 463,
+            "question": "□ + 6 = 15",
+            "answer": "9"
+        },
+        {
+            "id": 464,
+            "question": "9 + □ = 15",
+            "answer": "6"
+        },
+        {
+            "id": 465,
+            "question": "9 + 6 = □",
+            "answer": "15"
+        },
+        {
+            "id": 466,
+            "question": "□ = 9 + 6",
+            "answer": "15"
+        },
+        {
+            "id": 467,
+            "question": "15 = □ + 6",
+            "answer": "9"
+        },
+        {
+            "id": 468,
+            "question": "15 = 9 + □",
+            "answer": "6"
+        },
+        {
+            "id": 469,
+            "question": "□ + 7 = 16",
+            "answer": "9"
+        },
+        {
+            "id": 470,
+            "question": "9 + □ = 16",
+            "answer": "7"
+        },
+        {
+            "id": 471,
+            "question": "9 + 7 = □",
+            "answer": "16"
+        },
+        {
+            "id": 472,
+            "question": "□ = 9 + 7",
+            "answer": "16"
+        },
+        {
+            "id": 473,
+            "question": "16 = □ + 7",
+            "answer": "9"
+        },
+        {
+            "id": 474,
+            "question": "16 = 9 + □",
+            "answer": "7"
+        },
+        {
+            "id": 475,
+            "question": "□ + 8 = 17",
+            "answer": "9"
+        },
+        {
+            "id": 476,
+            "question": "9 + □ = 17",
+            "answer": "8"
+        },
+        {
+            "id": 477,
+            "question": "9 + 8 = □",
+            "answer": "17"
+        },
+        {
+            "id": 478,
+            "question": "□ = 9 + 8",
+            "answer": "17"
+        },
+        {
+            "id": 479,
+            "question": "17 = □ + 8",
+            "answer": "9"
+        },
+        {
+            "id": 480,
+            "question": "17 = 9 + □",
+            "answer": "8"
+        },
+        {
+            "id": 481,
+            "question": "□ + 9 = 18",
+            "answer": "9"
+        },
+        {
+            "id": 482,
+            "question": "9 + □ = 18",
+            "answer": "9"
+        },
+        {
+            "id": 483,
+            "question": "9 + 9 = □",
+            "answer": "18"
+        },
+        {
+            "id": 484,
+            "question": "□ = 9 + 9",
+            "answer": "18"
+        },
+        {
+            "id": 485,
+            "question": "18 = □ + 9",
+            "answer": "9"
+        },
+        {
+            "id": 486,
+            "question": "18 = 9 + □",
+            "answer": "9"
+        }
+    ]
+}

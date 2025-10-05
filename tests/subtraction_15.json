@@ -1,0 +1,91 @@
+{
+    "test_name": "Neighbors",
+    "test_subtitle": "Subtracting numbers that live nextdoor or almost nextdoor is always one or two",
+    "questions": [
+        {
+            "id": 1,
+            "question": "☐ - 7 = 2",
+            "answer": "9"
+        },
+        {
+            "id": 2,
+            "question": "☐ - 8 = 1",
+            "answer": "9"
+        },
+        {
+            "id": 3,
+            "question": "☐ - 6 = 2",
+            "answer": "8"
+        },
+        {
+            "id": 4,
+            "question": "☐ - 7 = 1",
+            "answer": "8"
+        },
+        {
+            "id": 5,
+            "question": "7 - ☐ = 2",
+            "answer": "5"
+        },
+        {
+            "id": 6,
+            "question": "8 - ☐ = 1",
+            "answer": "7"
+        },
+        {
+            "id": 7,
+            "question": "6 - ☐ = 2",
+            "answer": "4"
+        },
+        {
+            "id": 8,
+            "question": "7 - ☐ = 1",
+            "answer": "6"
+        },
+        {
+            "id": 9,
+            "question": "☐ - 5 = 2",
+            "answer": "7"
+        },
+        {
+            "id": 10,
+            "question": "☐ - 4 = 3",
+            "answer": "7"
+        },
+        {
+            "id": 11,
+            "question": "☐ - 3 = 2",
+            "answer": "5"
+        },
+        {
+            "id": 12,
+            "question": "5 - ☐ = 1",
+            "answer": "4"
+        },
+        {
+            "id": 13,
+            "question": "4 - ☐ = 2",
+            "answer": "2"
+        },
+        {
+            "id": 14,
+            "question": "☐ - 2 = 3",
+            "answer": "5"
+        },
+        {
+            "id": 15,
+            "question": "3 - ☐ = 1",
+            "answer": "2"
+        },
+        {
+            "id": 16,
+            "question": "☐ - 1 = 2",
+            "answer": "3"
+        },
+        {
+            "id": 17,
+            "question": "☐ - 1 = 1",
+            "answer": "2"
+        }
+    ]
+}

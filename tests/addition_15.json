@@ -1,6 +1,6 @@
 {
     "test_name": "Doubles",
-    "test_subtitle": "",
+    "test_subtitle": "Add the same number to itself",
     "questions": [
         {
             "id": 1,

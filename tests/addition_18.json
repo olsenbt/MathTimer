@@ -1,6 +1,6 @@
 {
     "test_name": "Add 10",
-    "test_subtitle": "Adding 10 to numbers 1–9",
+    "test_subtitle": "Adding 10 to numbers 1-9",
     "questions": [
         {
             "id": 1,
