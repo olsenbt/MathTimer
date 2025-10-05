@@ -10,6 +10,7 @@ let questionBox = document.getElementById("question-box");
 let answerInput = document.getElementById("answer-input");
 let scoreSummary = document.getElementById("score-summary");
 let missedQuestions = document.getElementById("missed-questions");
+let currentTestName = null;
 
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
@@ -113,6 +114,7 @@ async function loadTest() {
     const data = await res.json();
 
     testTitle.innerText = data.test_name;
+    currentTestName = data.test_name;
     const testSubtitle = document.getElementById("test-subtitle");
     if (data.test_subtitle && data.test_subtitle.trim() !== "") {
       testSubtitle.textContent = data.test_subtitle;
@@ -144,7 +146,6 @@ function parseURLFromTestId(id) {
 
   const symbol = symbols[operation] || "?";
   const levelLabel = (level === 10) ? "Mixed" : `${symbol}${level}`;
-  testSession.testType = levelLabel;
 
   document.body.classList.add(`${operation}-bg`);
 }
@@ -268,14 +269,9 @@ function finishTest() {
   document.getElementById("end-screen").classList.remove("hidden");
   scoreSummary.innerText = `You got ${correctCount} out of 30 correct.`;
   
-  const key = `${operation}_${level}`;
-  const previousScore = parseInt(localStorage.getItem(key)) || 0;
-
-  if(correctCount > previousScore) {
-    localStorage.setItem(key, correctCount);
-  }
-
-  localStorage.setItem(`${operation}_${level}`, correctCount);
+  const key = currentTestName;
+  localStorage.setItem(key, correctCount);
+  testSession.testType = currentTestName;
 
   if (correctCount === QUESTIONS_TOTAL) {
     const randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
