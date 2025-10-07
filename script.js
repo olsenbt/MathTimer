@@ -11,6 +11,7 @@ let answerInput = document.getElementById("answer-input");
 let scoreSummary = document.getElementById("score-summary");
 let missedQuestions = document.getElementById("missed-questions");
 let currentTestName = null;
+let endTestTitle = document.getElementById("end-test-title");
 
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
@@ -267,6 +268,8 @@ function finishTest() {
   clearInterval(timer);
   document.getElementById("test-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
+
+  endTestTitle.innerText = currentTestName;
   scoreSummary.innerText = `You got ${correctCount} out of 30 correct.`;
   
   const key = currentTestName;
