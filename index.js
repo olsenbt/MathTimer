@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const timerToggle = document.getElementById("show-timer");
-  const testLinks = document.querySelectorAll("a[data-id]");
+  const testLinks = document.querySelectorAll(".levels a");
 
   testLinks.forEach(link => {
     link.addEventListener("click", (e) => {
