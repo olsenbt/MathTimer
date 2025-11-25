@@ -4,13 +4,23 @@
     "questions": [
         {
             "id": 1,
-            "question": "12 * 10",
+            "question": "12 * 0",
             "answer": "0"
         },
         {
             "id": 2,
-            "question": "10 * 12",
+            "question": "0 * 12",
             "answer": "0"
+        },
+        {
+            "id": 3,
+            "question": "12 * 1",
+            "answer": "12"
+        },
+        {
+            "id": 4,
+            "question": "1 * 12",
+            "answer": "12"
         },
         {
             "id": 5,
