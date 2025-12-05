@@ -490,12 +490,12 @@
                 {
             "id": 1,
             "question": "12 * 10",
-            "answer": "0"
+            "answer": "120"
         },
         {
             "id": 2,
             "question": "10 * 12",
-            "answer": "0"
+            "answer": "120"
         },
         {
             "id": 5,
