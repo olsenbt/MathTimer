@@ -71,6 +71,22 @@ const perfectGifs = [
   "trolls_poppy.gif"
 ]
 
+const holidayGifs = [
+  "holiday/frosty_bday.gif",
+  "holiday/mickey_skate.gif",
+  "holiday/frozen_sven.gif",
+  "holiday/frozen_olaf.gif",
+  "holiday/snoopy_tree.gif",
+  "holiday/snoopy_snowman.gif",
+  "holiday/bluey_penguin.gif",
+  "holiday/minecraft_snowman.gif",
+  "holiday/minions_snow.gif",
+  "holiday/peppa_snowman.gif",
+  "holiday/pokemon_snow.gif",
+  "holiday/grogu_snow.gif",
+  "holiday/looneytunes_snowman.gif"
+]
+
 let testSession = {
   startTime: new Date().toISOString(),
   testType: "",
@@ -277,7 +293,15 @@ function finishTest() {
   testSession.testType = currentTestName;
 
   if (correctCount === QUESTIONS_TOTAL) {
-    const randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
+    const month = new Date().getMonth();
+    let randomGif;
+
+    if (month === 11) {
+      randomGif = holidayGifs[Math.floor(Math.random() * holidayGifs.length)];
+    } else {
+      randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
+    }
+    
     missedQuestions.innerHTML = `
       <div style="text-align: center;">
         <p style="font-size: 1.2em;">Perfect score! 🎉</p>
