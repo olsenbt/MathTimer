@@ -296,12 +296,12 @@ function finishTest() {
     const month = new Date().getMonth();
     let randomGif;
 
-    if (month === 11) {
+    if (month === 11 || month === 0) {
       randomGif = holidayGifs[Math.floor(Math.random() * holidayGifs.length)];
     } else {
       randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
     }
-    
+
     missedQuestions.innerHTML = `
       <div style="text-align: center;">
         <p style="font-size: 1.2em;">Perfect score! 🎉</p>
