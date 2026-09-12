@@ -76,7 +76,7 @@ def generate_test_file(operation: str, level: int, test_name: str, test_subtitle
     with open(filename, "w") as f:
         json.dump(test_data, f, indent=4)
 
-    print(f"✅ Generated {filename} with {len(questions)} questions.")
+    print(f"Generated {filename} with {len(questions)} questions.")
 
 
 if __name__ == "__main__":
@@ -89,4 +89,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    generate_test_file(args.operation, args.level, args.name, args.subtitle, args.output)
+    level = args.level if args.level == "half" else int(args.level)
+    generate_test_file(args.operation, level, args.name, args.subtitle, args.output)

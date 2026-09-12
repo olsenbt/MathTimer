@@ -162,7 +162,7 @@ function parseURLFromTestId(id) {
   };
 
   const symbol = symbols[operation] || "?";
-  const levelLabel = (level === 10) ? "Mixed" : `${symbol}${level}`;
+  const levelLabel = (level === 13) ? "Mixed" : `${symbol}${level}`;
 
   document.body.classList.add(`${operation}-bg`);
 }
