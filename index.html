@@ -7,10 +7,32 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Choose a Math Timing</h1>
-    <div class="category">
-      <h2>Addition</h2>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Math Timings home">
+      <span class="brand-mark symbol-logo" aria-hidden="true"><i>+</i><i>−</i><i>×</i><i>÷</i></span>
+      <span>Math Timings</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <span class="coin-balance" aria-label="Coin balance"><span class="coin-icon" aria-hidden="true">●</span><span data-coin-balance>0</span></span>
+      <a href="shop.html">Shop</a>
+      <a href="collection.html">Collection</a>
+      <a href="history.html">My scores</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="player-progress-row"><div data-active-egg class="active-egg-card" aria-live="polite"></div><div data-equipped-pet class="equipped-pet-chip"></div></div>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Ready, set, solve!</p>
+        <h1 id="page-title">What do you want to practice?</h1>
+        <p>Pick a math adventure and show what you know.</p>
+      </div>
+    </section>
+
+    <section class="practice-grid" aria-label="Math practice levels">
+    <div class="category category-addition">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">+</span><div><h2>Addition</h2><p>Build your adding power</p></div></div>
       <div class="levels addition-levels">
         <a href="test.html?test=addition_2">+2</a>
         <a href="test.html?test=addition_3">+3</a>
@@ -27,8 +49,8 @@
       </div>
     </div>
 
-    <div class="category">
-      <h2>Addition Facts Strategy</h2>
+    <div class="category category-addition">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">★</span><div><h2>Addition Strategies</h2><p>Try a smart shortcut</p></div></div>
       <div class="levels addition-levels">
         <a href="test.html?test=addition_14">Count On</a>
         <a href="test.html?test=addition_15">Doubles</a>
@@ -40,8 +62,8 @@
       </div>
     </div>
 
-    <div class="category">
-      <h2>Subtraction</h2>
+    <div class="category category-subtraction">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">−</span><div><h2>Subtraction</h2><p>Practice taking away</p></div></div>
       <div class="levels subtraction-levels">
         <a href="test.html?test=subtraction_2">-2</a>
         <a href="test.html?test=subtraction_3">-3</a>
@@ -58,8 +80,8 @@
       </div>
     </div>
 
-        <div class="category">
-      <h2>Subtraction Facts Strategy</h2>
+    <div class="category category-subtraction">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">★</span><div><h2>Subtraction Strategies</h2><p>Find a clever path</p></div></div>
       <div class="levels subtraction-levels">
         <a href="test.html?test=subtraction_14">Count Back</a>
         <a href="test.html?test=subtraction_15">Neighbor</a>
@@ -70,8 +92,8 @@
       </div>
     </div>
 
-    <div class="category">
-      <h2>Multiplication Level 1</h2>
+    <div class="category category-multiplication">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">×</span><div><h2>Multiplication</h2><p>Start with times tables</p></div></div>
       <div class="levels multiplication-levels">
         <a href="test.html?test=multiplication_2">x2</a>
         <a href="test.html?test=multiplication_3">x3</a>
@@ -86,8 +108,8 @@
       </div>
     </div>
     
-    <div class="category">
-      <h2>Multiplication Level 2</h2>
+    <div class="category category-multiplication2">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">×</span><div><h2>Multiplication Plus</h2><p>Take on a bigger challenge</p></div></div>
       <div class="levels multiplication2-levels">
         <a href="test.html?test=multiplication2_10">x10</a>
         <a href="test.html?test=multiplication2_11">x11</a>
@@ -98,8 +120,8 @@
       </div>
     </div>
 
-    <div class="category">
-      <h2>Division Level 1</h2>
+    <div class="category category-division">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">÷</span><div><h2>Division</h2><p>Share into equal groups</p></div></div>
       <div class="levels division-levels">
         <a href="test.html?test=division_2">÷2</a>
         <a href="test.html?test=division_3">÷3</a>
@@ -116,8 +138,8 @@
       </div>
     </div>
 
-    <div class="category">
-      <h2>Long Division Level 2</h2>
+    <div class="category category-division2">
+      <div class="category-heading"><span class="category-icon" aria-hidden="true">÷</span><div><h2>Long Division</h2><p>Level up your division</p></div></div>
       <div class="levels division2-levels">
         <a href="test.html?test=division2_2">÷2</a>
         <a href="test.html?test=division2_3">÷3</a>
@@ -133,16 +155,20 @@
         <a href="test.html?test=division2_13">Mixed</a>
       </div>
     </div>
-  </div>
-  <div id="timer-toggle" style="position: fixed; bottom: 10px; left: 10px; background: #f9f9f9; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px;">
-    <label>
-      <input type="checkbox" id="show-timer" checked />
-      Show Timer
-    </label>
-  </div>
-  <div id="test-history-link" style="position: fixed; bottom: 16px; right: 10px;">
-    <a href="history.html" style="text-decoration: none; background: #f9f9f9; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px;">📊 View Test History</a>
-  </div>
+    </section>
+
+    <aside id="timer-toggle" class="timer-card">
+      <div><strong>Practice timer</strong><span>Choose whether the 2-minute clock is visible.</span></div>
+      <label>
+        <input type="checkbox" id="show-timer" checked />
+        <span class="toggle-track" aria-hidden="true"></span>
+        <span class="toggle-label">Show timer</span>
+      </label>
+    </aside>
+  </main>
+  <footer>Keep practicing. Every answer makes your math brain stronger!</footer>
+  <script src="app-data.js"></script>
+  <script src="site-shell.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

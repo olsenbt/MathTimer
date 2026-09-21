@@ -11,9 +11,18 @@
         onload="renderMathInElement(document.body, { throwOnError: false });"></script>
 </head>
 <body>
+  <nav class="practice-utility" aria-label="Practice links">
+    <a href="index.html">Practice home</a>
+    <a href="shop.html">Shop</a>
+    <a href="collection.html">Collection</a>
+    <span class="coin-balance" aria-label="Coin balance"><span class="coin-icon" aria-hidden="true">●</span><span data-coin-balance>0</span></span>
+  </nav>
   <div id="title-screen" class="screen">
+    <div class="practice-companion"><div data-active-egg class="active-egg-card"></div></div>
+    <div class="practice-badge" aria-hidden="true">Ready?</div>
     <h1 id="test-title"></h1>
     <div id="test-subtitle"></div>
+    <p class="test-intro"><span>Answer 30 questions.</span> <span id="level-encouragement">Take a breath, you've got this!</span></p>
     <button id="start-btn">Start</button>
     <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
   </div>
@@ -25,7 +34,8 @@
       <span id="question-counter"></span>
     </div>
     <div id="question-box"></div>
-    <input type="text" id="answer-input" autocomplete="off" maxlength="4"/>
+    <label class="answer-label" for="answer-input">Type your answer</label>
+    <input type="text" id="answer-input" autocomplete="off" inputmode="numeric" maxlength="4" aria-label="Your answer"/>
     
   </div>
 
@@ -33,11 +43,24 @@
     <h2>Test Complete!</h2>
     <h3 id="end-test-title"></h3>
     <p id="score-summary"></p>
+    <div id="coin-reward" class="coin-reward" aria-live="polite"></div>
+    <div id="pet-reward" class="pet-reward" aria-live="polite"></div>
     <div id="missed-questions"></div>
-    <p>Don't click return home until your teacher has recorded your score</p>
-    <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
+    <p class="teacher-note">Wait until your teacher has recorded your score before leaving this page.</p>
+    <div class="result-actions">
+      <button class="home-btn" onclick="window.location.href='index.html'">Practice home</button>
+      <button class="secondary-btn" onclick="window.location.href='shop.html'">Visit shop</button>
+    </div>
   </div>
 
+  <dialog id="hatch-dialog" class="hatch-dialog">
+    <div class="hatch-animation" aria-hidden="true"><span class="hatch-egg">🥚</span><span class="hatch-light">✦</span></div>
+    <div id="hatch-result"></div>
+    <button id="hatch-continue">Continue</button>
+  </dialog>
+
+  <script src="app-data.js"></script>
+  <script src="site-shell.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

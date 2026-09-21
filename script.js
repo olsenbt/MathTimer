@@ -12,80 +12,16 @@ let scoreSummary = document.getElementById("score-summary");
 let missedQuestions = document.getElementById("missed-questions");
 let currentTestName = null;
 let endTestTitle = document.getElementById("end-test-title");
+let coinReward = document.getElementById("coin-reward");
 
 let questions = [], currentQuestionIndex = 0, correctCount = 0, timeLeft = TIME_LIMIT, timer;
 let wrongAnswers = [];
+let testFinished = false;
+let sessionId = null;
 
 const urlParams = new URLSearchParams(window.location.search);
 const testId = urlParams.get("test");
 const showTimer = urlParams.get("timer") !== "off";
-
-const perfectGifs = [
-  "arthur_celebrate.gif",
-  "bluey_bluey.gif",
-  "bluey_celebrate.gif",
-  "bluey_dad.gif",
-  "bluey_twirl.gif",
-  "cars_race.gif",
-  "dinosaur_dance.gif",
-  "dinosaur_rex.gif",
-  "elmo_celebrate.gif",
-  "elmo_dance.gif",
-  "httyd_smile.gif",
-  "httyd_toothless.gif",
-  "hulk_dance.gif",
-  "lego_batman.gif",
-  "lego_dance.gif",
-  "lego_shocked.gif",
-  "looneytunes_bugs.gif",
-  "looneytunes_daffy.gif",
-  "looneytunes_sam.gif",
-  "mario_bowser.gif",
-  "mario_cappy.gif",
-  "mario_dance.gif",
-  "mario_luigi.gif",
-  "minecraft_creeper.gif",
-  "minecraft_steve.gif",
-  "minions_dance.gif",
-  "minions_happy.gif",
-  "minions_king.gif",
-  "minions_purple.gif",
-  "minions_tracksuit.gif",
-  "monstersinc_sully.gif",
-  "paw_patrol.gif",
-  "peppa_family.gif",
-  "peppa_george.gif",
-  "peppa_peppa.gif",
-  "pokemon_pikachu.gif",
-  "roblox_dance1.gif",
-  "sonic_run.gif",
-  "spiderman_dance.gif",
-  "spongebob_ukelele.gif",
-  "starwars_grogu.gif",
-  "stitch_elvis.gif",
-  "teentitans_robin.gif",
-  "toystory_bullseye.gif",
-  "toystory_dance.gif",
-  "toystory_flight.gif",
-  "trolls_baby.gif",
-  "trolls_poppy.gif"
-]
-
-const holidayGifs = [
-  "holiday/frosty_bday.gif",
-  "holiday/mickey_skate.gif",
-  "holiday/frozen_sven.gif",
-  "holiday/frozen_olaf.gif",
-  "holiday/snoopy_tree.gif",
-  "holiday/snoopy_snowman.gif",
-  "holiday/bluey_penguin.gif",
-  "holiday/minecraft_snowman.gif",
-  "holiday/minions_snow.gif",
-  "holiday/peppa_snowman.gif",
-  "holiday/pokemon_snow.gif",
-  "holiday/grogu_snow.gif",
-  "holiday/looneytunes_snowman.gif"
-]
 
 let testSession = {
   startTime: new Date().toISOString(),
@@ -144,6 +80,7 @@ async function loadTest() {
     }));
     
     questions = sampleQuestions(bank);
+    document.getElementById("level-encouragement").textContent = MathTimer.getIntroLine(testId);
 
     parseURLFromTestId(testId);
   } catch (err) {
@@ -194,7 +131,31 @@ function shuffle(arr) {
   }
 }
 
+function renderMathQuestion(question, container) {
+  const displayQuestion = question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
+  if (typeof katex !== "undefined") {
+    katex.render(displayQuestion, container, { throwOnError: false });
+    return;
+  }
+
+  container.textContent = question
+    .replace(/\\frac\{1\}\{2\}/g, "½")
+    .replace(/\\sqrt\{(\d+)\}/g, "√$1")
+    .replace(/\*/g, "×")
+    .replace(/\//g, "÷");
+}
+
 function startTest() {
+  sessionId = MathTimer.createSessionId();
+  testSession = {
+    startTime: new Date().toISOString(),
+    testType: currentTestName,
+    correct: 0,
+    missed: 0,
+    answered: 0,
+    coinsEarned: 0,
+    sessionId
+  };
   document.getElementById("title-screen").classList.add("hidden");
   document.getElementById("test-screen").classList.remove("hidden");
   answerInput.focus();
@@ -233,14 +194,10 @@ function nextQuestion() {
     if (longHTML) {
       questionBox.innerHTML = longHTML;
     } else {
-      // fallback to KaTeX (in case question isn't a plain "a / b")
-      const displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
-      katex.render(displayQ, questionBox, { throwOnError: false });
+      renderMathQuestion(q.question, questionBox);
     }
   } else {
-    // Normal path: render with KaTeX (as before)
-    const displayQ = q.question.replace(/\*/g, "\\times").replace(/\//g, "\\div");
-    katex.render(displayQ, questionBox, { throwOnError: false });
+    renderMathQuestion(q.question, questionBox);
   }
 
   questionCounter.textContent = `Question ${currentQuestionIndex + 1}/${QUESTIONS_TOTAL}`;
@@ -281,6 +238,8 @@ function handleAnswer(e) {
 }
 
 function finishTest() {
+  if (testFinished) return;
+  testFinished = true;
   clearInterval(timer);
   document.getElementById("test-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
@@ -291,21 +250,32 @@ function finishTest() {
   const key = currentTestName;
   localStorage.setItem(key, correctCount);
   testSession.testType = currentTestName;
+  const reward = MathTimer.awardCompletion(sessionId, correctCount, testId);
+  testSession.coinsEarned = reward.coinsAwarded;
+  coinReward.innerHTML = reward.coinsAwarded > 0
+    ? `<span class="coin-icon" aria-hidden="true">●</span><strong>+${reward.coinsAwarded} coins</strong><span>Balance: ${reward.state.coins}</span>`
+    : `<strong>No coins this round</strong><span>Reach 10 correct to start earning coins.</span>`;
+
+  const petReward = document.getElementById("pet-reward");
+  const rewardLines = [];
+  if (reward.bonusCoins > 0) rewardLines.push(`Your pet found ${reward.bonusCoins} bonus coin${reward.bonusCoins === 1 ? "" : "s"}!`);
+  if (reward.state.equippedPet) rewardLines.push(`${MathTimer.getPet(reward.state.equippedPet).name} earned Pet XP.`);
+  if (reward.eggProgress && !reward.hatchResult) {
+    const active = reward.state.activeEgg;
+    const egg = MathTimer.getEgg(active.eggId);
+    rewardLines.push(`${egg.name}: ${active.progress} / ${egg.levelsRequired} levels completed${reward.eggBonus ? " — bonus progress!" : ""}`);
+  }
+  petReward.textContent = rewardLines.join(" ");
+  if (reward.hatchResult) showHatchReveal(reward.hatchResult);
 
   if (correctCount === QUESTIONS_TOTAL) {
-    const month = new Date().getMonth();
-    let randomGif;
-
-    if (month === 11 || month === 0) {
-      randomGif = holidayGifs[Math.floor(Math.random() * holidayGifs.length)];
-    } else {
-      randomGif = perfectGifs[Math.floor(Math.random() * perfectGifs.length)];
-    }
+    const randomGif = MathTimer.getCelebrationGif();
+    MathTimer.showThemeEffect();
 
     missedQuestions.innerHTML = `
-      <div style="text-align: center;">
-        <p style="font-size: 1.2em;">Perfect score! 🎉</p>
-        <img src="assets/gifs/${randomGif}" alt="Celebration Gif" style="max-width: 300px; margin-top: 10px;" />
+      <div class="perfect-result">
+        <p>Perfect score!</p>
+        <img src="assets/gifs/${randomGif}" alt="Perfect score celebration" />
       </div>
     `;
   } else if (wrongAnswers.length > 0) {
@@ -320,6 +290,19 @@ function finishTest() {
   history.push(testSession);
   localStorage.setItem("testHistory", JSON.stringify(history));
 }
+
+function showHatchReveal(result) {
+  const pet = MathTimer.getPet(result.petId);
+  const owned = MathTimer.loadState().ownedPets.find(entry => entry.petId === pet.id);
+  const ability = MathTimer.getAbilityInfo(pet.id, owned.level);
+  const dialog = document.getElementById("hatch-dialog");
+  document.getElementById("hatch-result").innerHTML = result.duplicate
+    ? `<p class="reveal-kicker">You already have ${pet.name}!</p><div class="revealed-pet" aria-hidden="true">${pet.icon}</div><h2>${pet.name} gained ${result.duplicateXp} XP.</h2>${result.levelsGained ? `<p>Level up! Now level ${owned.level}.</p>` : ""}`
+    : `<p class="reveal-kicker">You hatched...</p><div class="revealed-pet" aria-hidden="true">${pet.icon}</div><h2>${pet.name}</h2><span class="rarity-label rarity-${pet.rarity.toLowerCase()}">${pet.rarity}</span><h3>${ability ? ability.name : "Cheerful Companion"}</h3><p>${ability ? ability.description : pet.cosmetic}</p>${result.autoEquipped ? "<p><strong>Your first pet is now equipped!</strong></p>" : ""}`;
+  dialog.showModal();
+}
+
+document.getElementById("hatch-continue").addEventListener("click", () => document.getElementById("hatch-dialog").close());
 
 answerInput.addEventListener("input", () => {
   answerInput.value = answerInput.value.replace(/\D/g, ""); // Digits only

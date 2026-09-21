@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const progress = MathTimer.loadState();
   document.querySelectorAll(".levels a").forEach(link => {
-    const id = link.dataset.id;
-    const score = localStorage.getItem(id);
+    const id = new URL(link.href).searchParams.get("test");
+    const score = progress.bestScores[id];
 
-    if (score === "30") {
+    if (score === 30) {
       link.classList.add("completed");
       link.title = "Completed (30/30)";
     }
