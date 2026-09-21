@@ -254,12 +254,13 @@ function finishTest() {
   testSession.coinsEarned = reward.coinsAwarded;
   coinReward.innerHTML = reward.coinsAwarded > 0
     ? `<span class="coin-icon" aria-hidden="true">●</span><strong>+${reward.coinsAwarded} coins</strong><span>Balance: ${reward.state.coins}</span>`
-    : `<strong>No coins this round</strong><span>Reach 10 correct to start earning coins.</span>`;
+    : `<strong>No coins this round</strong><span>Keep practicing to earn coins next round.</span>`;
 
   const petReward = document.getElementById("pet-reward");
   const rewardLines = [];
   if (reward.bonusCoins > 0) rewardLines.push(`Your pet found ${reward.bonusCoins} bonus coin${reward.bonusCoins === 1 ? "" : "s"}!`);
   if (reward.state.equippedPet) rewardLines.push(`${MathTimer.getPet(reward.state.equippedPet).name} earned Pet XP.`);
+  if (reward.sharedXp) rewardLines.push(`${MathTimer.getPet(reward.sharedXp).name} received ${reward.sharedXpAmount} Training Buddy XP.`);
   if (reward.eggProgress && !reward.hatchResult) {
     const active = reward.state.activeEgg;
     const egg = MathTimer.getEgg(active.eggId);
@@ -298,7 +299,7 @@ function showHatchReveal(result) {
   const dialog = document.getElementById("hatch-dialog");
   document.getElementById("hatch-result").innerHTML = result.duplicate
     ? `<p class="reveal-kicker">You already have ${pet.name}!</p><div class="revealed-pet" aria-hidden="true">${pet.icon}</div><h2>${pet.name} gained ${result.duplicateXp} XP.</h2>${result.levelsGained ? `<p>Level up! Now level ${owned.level}.</p>` : ""}`
-    : `<p class="reveal-kicker">You hatched...</p><div class="revealed-pet" aria-hidden="true">${pet.icon}</div><h2>${pet.name}</h2><span class="rarity-label rarity-${pet.rarity.toLowerCase()}">${pet.rarity}</span><h3>${ability ? ability.name : "Cheerful Companion"}</h3><p>${ability ? ability.description : pet.cosmetic}</p>${result.autoEquipped ? "<p><strong>Your first pet is now equipped!</strong></p>" : ""}`;
+    : `<p class="reveal-kicker">You hatched...</p><div class="revealed-pet" aria-hidden="true">${pet.icon}</div><h2>${pet.name}</h2><span class="rarity-label rarity-${pet.rarity.toLowerCase()}">${pet.rarity}</span><h3>${ability ? ability.name : "Cheerful Companion"}</h3><p>${ability ? ability.description : pet.tagline}</p>${result.autoEquipped ? "<p><strong>Your first pet is now equipped!</strong></p>" : ""}`;
   dialog.showModal();
 }
 

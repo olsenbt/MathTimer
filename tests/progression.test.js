@@ -33,7 +33,8 @@ function test(name, run) {
 
 test("reward curve covers low, medium, high, and perfect scores", () => {
   assert.equal(MathTimer.calculateCoins(0), 0);
-  assert.equal(MathTimer.calculateCoins(9), 0);
+  assert.equal(MathTimer.calculateCoins(1), 1);
+  assert.equal(MathTimer.calculateCoins(9), 1);
   assert.equal(MathTimer.calculateCoins(10), 2);
   assert.equal(MathTimer.calculateCoins(20), 6);
   assert.equal(MathTimer.calculateCoins(28), 10);
@@ -56,6 +57,16 @@ test("a zero score never increases the balance", () => {
   const result = MathTimer.awardCompletion("session-zero", 0, "addition_3");
   assert.equal(result.coinsAwarded, 0);
   assert.equal(MathTimer.loadState().coins, 0);
+});
+
+test("a zero score cannot trigger pet rewards or Pet XP", () => {
+  const state = MathTimer.loadState();
+  state.ownedPets = [{ petId: "phoenix", level: 1, xp: 0 }];
+  state.equippedPet = "phoenix";
+  MathTimer.saveState(state);
+  const result = MathTimer.awardCompletion("session-zero-pet", 0, "addition_3", () => 0);
+  assert.equal(result.coinsAwarded, 0);
+  assert.equal(result.state.ownedPets[0].xp, 0);
 });
 
 test("a purchase deducts its price exactly once", () => {
@@ -127,6 +138,14 @@ test("only one egg hatches at a time and refresh keeps progress", () => {
   assert.equal(MathTimer.loadState().activeEgg.progress, 1);
 });
 
+test("an earnest developing score still advances an egg", () => {
+  const state = MathTimer.loadState(); state.coins = 500; MathTimer.saveState(state);
+  MathTimer.purchaseEgg("starter-egg");
+  const result = MathTimer.awardCompletion("developing-egg", 6, "addition_2", () => 0.5);
+  assert.equal(result.baseCoins, 1);
+  assert.equal(result.eggProgress, 1);
+});
+
 test("first hatch auto-equips and a duplicate becomes XP", () => {
   const state = MathTimer.loadState(); state.coins = 500; MathTimer.saveState(state);
   MathTimer.purchaseEgg("starter-egg");
@@ -148,6 +167,16 @@ test("pet XP stops safely at level 10", () => {
   assert.equal(pet.level, 10);
   assert.equal(pet.xp, 0);
   assert.equal(MathTimer.addPetXp(pet, 50).gained, 0);
+});
+
+test("a regularly used pet can reach level 10 in about one third of a school year", () => {
+  const pet = { petId: "fox", level: 1, xp: 0 };
+  const totalXp = Array.from({ length: 9 }, (_, index) => MathTimer.xpForNextLevel(index + 1)).reduce((sum, xp) => sum + xp, 0);
+  assert.equal(totalXp, 270);
+  for (let round = 0; round < 26; round++) MathTimer.addPetXp(pet, 10);
+  assert.equal(pet.level, 9);
+  MathTimer.addPetXp(pet, 10);
+  assert.equal(pet.level, 10);
 });
 
 test("owned seasonal items can still be equipped outside their purchase season", () => {
@@ -229,6 +258,46 @@ test("rarity makes the same pet perk stronger", () => {
   const epicCoinFinder = MathTimer.getAbilityInfo("octopus", 5);
   assert.equal(rareCoinFinder.kind, epicCoinFinder.kind);
   assert.ok(epicCoinFinder.value > rareCoinFinder.value);
+});
+
+test("every pet ability grows from level 1 to level 10", () => {
+  for (const pet of MathTimer.PETS.filter((candidate) => candidate.ability)) {
+    const first = MathTimer.getAbilityInfo(pet.id, 1);
+    const middle = MathTimer.getAbilityInfo(pet.id, 5);
+    const max = MathTimer.getAbilityInfo(pet.id, 10);
+    assert.ok(middle.value > first.value, `${pet.name} should improve by level 5`);
+    assert.ok(max.value > middle.value, `${pet.name} should improve by level 10`);
+  }
+});
+
+test("Training Buddy gives guaranteed XP to the strongest other pet", () => {
+  const state = MathTimer.loadState();
+  state.ownedPets = [
+    { petId: "dolphin", level: 10, xp: 0 },
+    { petId: "mouse", level: 9, xp: 0 },
+    { petId: "phoenix", level: 1, xp: 0 }
+  ];
+  state.equippedPet = "dolphin";
+  MathTimer.saveState(state);
+  const result = MathTimer.awardCompletion("training-buddy", 20, "addition_4", () => 0.99);
+  const phoenix = result.state.ownedPets.find((pet) => pet.petId === "phoenix");
+  const mouse = result.state.ownedPets.find((pet) => pet.petId === "mouse");
+  assert.equal(result.sharedXp, "phoenix");
+  assert.equal(result.sharedXpAmount, 9);
+  assert.equal(phoenix.level, 1);
+  assert.equal(phoenix.xp, 9);
+  assert.equal(mouse.xp, 0);
+});
+
+test("lucky hatch shifts common results into non-common results", () => {
+  const egg = MathTimer.getEgg("explorer-egg");
+  const state = MathTimer.loadState();
+  state.ownedPets = [{ petId: "crystal-owl", level: 10, xp: 0 }];
+  state.equippedPet = "crystal-owl";
+  state.activeEgg = { eggId: egg.id, progress: egg.levelsRequired };
+  MathTimer.saveState(state);
+  const result = MathTimer.hatchActiveEgg(MathTimer.loadState(), () => 0.545);
+  assert.equal(MathTimer.getPet(result.petId).rarity, "Rare");
 });
 
 test("seasonal pets retain their collection identity", () => {
